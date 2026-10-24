@@ -6,10 +6,10 @@ A responsive, static portfolio built from the attached academic CV. No build too
 Open `index.html` in a browser, or from this folder run `python3 -m http.server 8000` and visit `http://localhost:8000`.
 
 ## Publish with GitHub Pages
-1. Sign in to [GitHub](https://github.com/) and create a **public** repository, named exactly `swayamjyoti.github.io`.
+1. Sign in to [GitHub](https://github.com/) and create a **public** repository, named exactly `swayamjyoti-sj.github.io`.
 2. Upload all **five files** in this folder to the repository root: `index.html`, `styles.css`, `script.js`, `Soumya_Swayamjyoti_CV.pdf`, and `README.md`. Commit the upload.
 3. Navigate to **Settings → Pages → Build and deployment**. Under **Source**, choose **Deploy from a branch**; select `main`, folder `/ (root)`; click **Save**.
-4. Your site will be available at `https://swayamjyoti.github.io/` once Pages deployment finishes (assuming the GitHub username is `swayamjyoti`).
+4. Your site will be available at `https://swayamjyoti-sj.github.io/` once Pages deployment finishes (assuming the GitHub username is `swayamjyoti-sj`).
 
 ## Customize
 - Update the section content in `index.html`.
@@ -18,3 +18,6 @@ Open `index.html` in a browser, or from this folder run `python3 -m http.server 
 - No email address or social profile was invented. Add contact information only if you want it shown publicly.
 
 The website contains personal/professional CV information and links to a public Google Scholar profile. Review all information before making the repository public.
+
+## Design palette
+The site uses primary red (#FF3B30), blue (#174FC3) and yellow (#FFD600) with white and dark blue backgrounds for legibility.
