@@ -1,4 +1,4 @@
-# Soumya Swayamjyoti — Personal Research Website
+# S. Swayamjyoti — Personal Research Website
 
 A responsive, static portfolio built from the attached academic CV. No build tools or framework needed.
 
