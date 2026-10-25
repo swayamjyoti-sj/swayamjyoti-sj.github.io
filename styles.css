@@ -64,3 +64,42 @@ h2{font-size:clamp(30px,2.8vw,40px);line-height:1.24;letter-spacing:-.04em}
 .hero-lead{font-size:18px}
 @media(max-width:1100px) and (min-width:701px){.site-header nav{gap:11px}.site-header nav a,.site-header nav .nav-contact{font-size:18px}.brand{font-size:12px}}
 @media(max-width:700px){.site-header nav a,.site-header nav .nav-contact{font-size:18px}.hero h1{font-size:clamp(31px,6.8vw,41px)}h2{font-size:clamp(29px,6vw,38px)}.contact-section h2{font-size:clamp(31px,6.5vw,40px)}}
+
+/* Hero supporting text aligned with the 18px primary navigation. */
+.hero-location,
+.hero-art .art-label,
+.hero-art .art-label-index,
+.hero-stats .stat-number,
+.hero-stats .stat-label {
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.hero-stats .stat-number { font-weight: 700; }
+.hero-art .art-asterisk { font-size: 18px; line-height: 1.5; }
+@media (max-width:700px) {
+  .hero-location, .hero-stats .stat-number, .hero-stats .stat-label { font-size:18px; }
+  /* Diagram annotations stay hidden on narrow screens to avoid collisions. */
+}
+
+/* Enlarged previously small supporting text, including screenshot examples. */
+.hero-location, .hero-art .art-label, .hero-art .art-label-index,
+.hero-stats .stat-label, .eyebrow, .section-kicker,
+.card-index, .pub-type, .publication-note, .timeline-period,
+.timeline-org, .education-card>span, .tags span,
+.dfg-status, .dfg-helper, .footer-inner, .brand {
+  font-size:20px;
+  line-height:1.55;
+  letter-spacing:0;
+}
+.hero-stats .stat-number {font-size:27px;line-height:1.25;font-weight:750}
+.hero-art .art-asterisk {font-size:24px}
+.hero-art .art-label {gap:6px}
+.stat-label,.hero-location {color:#111111}
+.research-card p,.publication p,.timeline p,.education-card p,.dfg-details ul {font-size:18px;line-height:1.7}
+@media(max-width:700px){
+ .hero-location,.hero-stats .stat-label,.eyebrow,.section-kicker,
+ .card-index,.pub-type,.publication-note,.timeline-period,.timeline-org,
+ .education-card>span,.tags span,.dfg-status,.dfg-helper,.footer-inner,.brand {font-size:18px}
+ .hero-stats .stat-number{font-size:25px}
+}
