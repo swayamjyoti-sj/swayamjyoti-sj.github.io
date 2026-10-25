@@ -1,0 +1,272 @@
+[
+  {
+    "number": 1,
+    "name": "Inherent structures and stability",
+    "latex": "\\begin{aligned}\n\\nabla_{\\mathbf r} U(\\mathbf r_A)=\\nabla_{\\mathbf r}U(\\mathbf r_B)=\\mathbf 0,\\qquad\n \\mathbf H_A=\\nabla^2_{\\mathbf r}U(\\mathbf r_A),\\quad\\lambda_{\\min}^{+}(\\mathbf H_A)>0.\n\\end{aligned}",
+    "meaning": "Find mechanically stable energy minima A and B and identify positive non-rigid Hessian eigenvalues.",
+    "flow": "Atomic coordinates, potential energy, Hessian eigenvalues → stable reference configurations.",
+    "stage": "ATOMIC",
+    "source_label": "eq:inherent"
+  },
+  {
+    "number": 2,
+    "name": "Forward and reverse activation barriers",
+    "latex": "\\Delta E^{\\ddagger}_{A\\to B}=U(\\mathbf r_S)-U(\\mathbf r_A),\\qquad\n\\Delta E^{\\ddagger}_{B\\to A}=U(\\mathbf r_S)-U(\\mathbf r_B).",
+    "meaning": "Compare saddle energy with initial and final minimum energies. One saddle can imply different forward and reverse barriers.",
+    "flow": "Potential energy landscape and saddle points → directional barriers.",
+    "stage": "ATOMIC",
+    "source_label": "eq:barriers"
+  },
+  {
+    "number": 3,
+    "name": "Thermally activated event rate",
+    "latex": "k_{ae}(\\bm\\sigma,T,\\mathbf z_a)=\\nu_{ae}(\\bm\\sigma,T,\\mathbf z_a)\n \\exp\\!\\left[-\\frac{\\Delta G^\\ddagger_{ae}(\\bm\\sigma,T,\\mathbf z_a)}{k_{\\mathrm B}T}\\right],",
+    "meaning": "Convert free-energy barriers and attempt frequencies into rates at temperature and stress.",
+    "flow": "Free-energy barriers, prefactors, stress, temperature → physically weighted transition rates.",
+    "stage": "KINETICS",
+    "source_label": "eq:rate"
+  },
+  {
+    "number": 4,
+    "name": "Athermal instability and fold scaling",
+    "latex": "\\lambda_{\\min}^{+}\\!\\big(\\mathbf H(\\gamma)\\big)\\to0^+,\\qquad\n \\partial_{\\mathbf r}U(\\mathbf r,\\gamma)=0,\\qquad\n \\Delta E^\\ddagger\\sim C(\\gamma_c-\\gamma)^{3/2}\\quad\\text{(generic fold, if applicable)}.",
+    "meaning": "Track loss of local stability as strain increases. A 3/2 barrier scaling can arise near a generic fold instability; it is not universal.",
+    "flow": "Hessian softening and imposed strain → athermal onset / possible fold scaling.",
+    "stage": "ATOMIC",
+    "source_label": "eq:fold"
+  },
+  {
+    "number": 5,
+    "name": "Participation weights and local observables",
+    "latex": "w_i=\\frac{|\\Delta\\mathbf r_i|^4}{\\sum_j|\\Delta\\mathbf r_j|^4},\\qquad\n N_{\\mathrm{part}}=\\left(\\sum_i w_i^2\\right)^{-1},\\qquad\n \\langle q\\rangle_{\\mathrm{LSE}}=\\sum_iw_iq_i.\n ",
+    "meaning": "Weight atom-level displacements, estimate effective participation, and average event-local quantities.",
+    "flow": "Atomic displacement field → coarse event core size and weighted descriptor.",
+    "stage": "ATOMIC",
+    "source_label": "eq:planweights"
+  },
+  {
+    "number": 6,
+    "name": "Atomic event descriptor vector",
+    "latex": "\\mathcal E_e=\\big( A_e,B_e,S_e,\\Delta E_e^{\\ddagger,+},\\Delta E_e^{\\ddagger,-},\n \\nu_e^\\pm,\\mathbf M_e,\\mathbf Q_e,\\ell_e,r_e,\\mathbf z_e\\big),",
+    "meaning": "Bundle state identifiers, barriers, prefactors, mechanical moments and structural descriptors for a single event.",
+    "flow": "Raw trajectories and sampled transitions → transferable event catalogue.",
+    "stage": "BRIDGE",
+    "source_label": "eq:descriptor"
+  },
+  {
+    "number": 7,
+    "name": "Plastic event moment and stress-biased barrier",
+    "latex": "\\mathbf M_e=\\int_{\\Omega_e}\\Delta\\bm\\varepsilon_e^p\\,\\dd V\n \\simeq V_e\\Delta\\bm\\varepsilon_e^p,\\qquad\n \\Delta G_e^\\ddagger(\\bm\\sigma)\\simeq\\Delta G_e^\\ddagger(\\mathbf0)\n -\\bm\\sigma:\\mathbf V_e^\\ddagger+O(\\|\\bm\\sigma\\|^2),",
+    "meaning": "Map a local plastic strain into a volume-integrated event moment and approximate how stress tilts an activation barrier.",
+    "flow": "Event strain, core volume and stress → plastic moment and stress-sensitive barrier.",
+    "stage": "BRIDGE",
+    "source_label": "eq:moment"
+  },
+  {
+    "number": 8,
+    "name": "Master equation for state probabilities",
+    "latex": "\\dot p_i=\\sum_{j\\ne i}\\big(k_{j\\to i}p_j-k_{i\\to j}p_i\\big),\\qquad\n \\sum_i p_i=1.",
+    "meaning": "Balance incoming and outgoing probability currents between atomic states.",
+    "flow": "Directed transition rates and state probabilities → evolving state population.",
+    "stage": "KINETICS",
+    "source_label": "eq:master"
+  },
+  {
+    "number": 9,
+    "name": "Kinetic Monte Carlo and waiting times",
+    "latex": "\\begin{aligned}\nK_a=\\sum_{e\\in\\mathcal A_a} k_{ae},\\qquad\n \\mathbb P(e\\mid a)=\\frac{k_{ae}}{K_a},\\qquad\n \\Delta t=-\\frac{\\ln u}{\\sum_{a}K_a},\\quad u\\sim U(0,1),\\\\\n \\mathbb P(\\text{at least one event within }t\\mid a)=1-\\exp(-K_a t).\n\\end{aligned}",
+    "meaning": "Aggregate active event rates, sample which event occurs and the next waiting time, and calculate occurrence probability.",
+    "flow": "Event catalogue and rates → stochastic event selection and clock.",
+    "stage": "KINETICS",
+    "source_label": "eq:kmc"
+  },
+  {
+    "number": 10,
+    "name": "Detailed balance",
+    "latex": "\\frac{k_{i\\to j}}{k_{j\\to i}}=\\exp[-\\beta(G_j-G_i)]\\quad\\text{for equilibrium reversible transitions},\\qquad\\beta=(k_\\mathrm BT)^{-1}.",
+    "meaning": "Impose equilibrium reversibility when it is applicable through state free-energy differences.",
+    "flow": "State free energies → constraints on forward/reverse transition rates.",
+    "stage": "KINETICS",
+    "source_label": "eq:balance"
+  },
+  {
+    "number": 11,
+    "name": "Why mean-barrier averaging fails",
+    "latex": "\\sum_e \\nu_e e^{-\\beta\\Delta G_e^\\ddagger}\n \\ne \\Big(\\sum_e\\nu_e\\Big)e^{-\\beta\\avg{\\Delta G^\\ddagger}}.",
+    "meaning": "Show that summing exponential rates differs from substituting an average barrier; rare low barriers can matter disproportionately.",
+    "flow": "Barrier distributions → total kinetic activity, not mean-barrier approximation.",
+    "stage": "KINETICS",
+    "source_label": "eq:nonavg"
+  },
+  {
+    "number": 12,
+    "name": "Stress sensitivity of transition rates",
+    "latex": "\\frac{\\partial\\log k_e}{\\partial\\sigma_{ij}}\n =\\frac{\\partial\\log\\nu_e}{\\partial\\sigma_{ij}}-\n \\frac{1}{k_\\mathrm BT}\\frac{\\partial\\Delta G_e^\\ddagger}{\\partial\\sigma_{ij}}.",
+    "meaning": "Differentiate logarithmic rates with respect to a stress component, separating prefactor response and barrier response.",
+    "flow": "Stress-dependent kinetics → rate sensitivity tensor components.",
+    "stage": "KINETICS",
+    "source_label": "eq:sens"
+  },
+  {
+    "number": 13,
+    "name": "Accessible events and extreme statistics",
+    "latex": "N_\\mathrm{access}(t_o)=\\sum_{e\\in\\mathcal A}\n \\left(1-e^{-k_e t_o}\\right),\\qquad\n \\mathbb P(\\Delta G_{\\min}>g)=\\big[1-F_{\\Delta G}(g)\\big]^{N_c},",
+    "meaning": "Count events statistically accessible over an observation time and estimate minimum-barrier extremes for independent samples.",
+    "flow": "Observation window and barrier distribution → active-event count and extreme statistics.",
+    "stage": "KINETICS",
+    "source_label": "eq:extreme"
+  },
+  {
+    "number": 14,
+    "name": "Driving-to-relaxation timescale ratio",
+    "latex": "\\mathrm{De}_a=\\frac{\\dot\\gamma}{\\gamma_* K_a},",
+    "meaning": "Compare the imposed strain rate with local relaxation activity; the quotient marks kinetic versus driving dominance.",
+    "flow": "Macroscopic driving and event rates → dimensionless crossover indicator.",
+    "stage": "KINETICS",
+    "source_label": "eq:de"
+  },
+  {
+    "number": 15,
+    "name": "Mesoscale elastic redistribution",
+    "latex": "\\delta\\sigma_{ij}(\\mathbf x)=\\int_\\Omega\n \\mathcal G_{ijkl}(\\mathbf x,\\mathbf y;\\mathcal B)\\,\n \\delta\\varepsilon^p_{kl}(\\mathbf y)\\,\\dd\\mathbf y,",
+    "meaning": "Use an elastic Green operator to propagate local plastic strain changes as a nonlocal stress redistribution.",
+    "flow": "Localized plastic event → interacting mesoscale stress field.",
+    "stage": "MESOSCALE",
+    "source_label": "eq:green"
+  },
+  {
+    "number": 16,
+    "name": "Plastic events, renewal and equilibration",
+    "latex": "\\bm\\varepsilon^p_a\\leftarrow\\bm\\varepsilon^p_a+\\Delta\\bm\\varepsilon^p_e,\\quad\n \\mathbf z_a\\leftarrow\\mathcal R(\\mathbf z_a,e),\\quad\n \\operatorname{div}\\bm\\sigma=\\mathbf0,\\quad\n \\{k_{be}\\}\\leftarrow\\{k_{be}(\\bm\\sigma_b,T,\\mathbf z_b)\\}.",
+    "meaning": "After each plastic event, update plastic strain, structural variables, force equilibrium and all affected event rates.",
+    "flow": "Event catalogue → history-dependent coupled event evolution.",
+    "stage": "MESOSCALE",
+    "source_label": "eq:renew"
+  },
+  {
+    "number": 17,
+    "name": "Avalanche size statistics and finite-size scaling",
+    "latex": "P(S;L)\\sim S^{-\\tau}\\,f\\!\\left(\\frac{S}{S_c(L)}\\right),\\qquad S_c(L)\\sim L^{d_f},",
+    "meaning": "Model a scale-dependent avalanche power law with cutoff that grows with system size.",
+    "flow": "Burst sizes across system sizes → scaling exponents and collective behavior.",
+    "stage": "MESOSCALE",
+    "source_label": "eq:avalanche"
+  },
+  {
+    "number": 18,
+    "name": "STZ populations and plastic strain rate",
+    "latex": "\\begin{aligned}\n\\dot c_+&=-r_-c_++r_+c_-+\\Gamma_+, &\n \\dot c_-&=r_-c_+-r_+c_-+\\Gamma_-,\\\\\n \\dot{\\bm\\varepsilon}^{p}&=\\frac{1}{V}\\sum_e\n k_e(\\bm\\sigma,T,\\mathbf z)\\,\\mathbf M_e\n \\quad\\longrightarrow\\quad \\mathcal F(\\bm\\sigma,T,\\chi,c_+,c_-),\\\\\n \\dot\\chi&=\\mathcal H(\\bm\\sigma:\\dot{\\bm\\varepsilon}^{p},\\chi,T)-\n \\mathcal A(\\chi,T)+\\operatorname{div}(D_\\chi\\nabla\\chi).\n\\end{aligned}",
+    "meaning": "Evolve plus/minus STZ populations and relate weighted events to plastic strain rate; continuum closure adds constitutive assumptions.",
+    "flow": "STZ populations and event moments → mesoscale plastic flow law.",
+    "stage": "MESOSCALE",
+    "source_label": "eq:stzpop"
+  },
+  {
+    "number": 19,
+    "name": "Microscale-to-macroscale averages",
+    "latex": "\\overline{\\mathbf F}=\\frac{1}{|\\Omega_m|}\\int_{\\Omega_m}\\mathbf F_m\\,\\dd V,\n \\qquad\n \\overline{\\mathbf P}=\\frac{1}{|\\Omega_m|}\\int_{\\Omega_m}\\mathbf P_m\\,\\dd V.",
+    "meaning": "Average deformation gradient and first Piola stress across a representative volume element.",
+    "flow": "Microscopic fields → macro deformation and macro stress.",
+    "stage": "CONTINUUM",
+    "source_label": "eq:averages"
+  },
+  {
+    "number": 20,
+    "name": "Hill–Mandel power consistency",
+    "latex": "\\overline{\\mathbf P}:\\delta\\overline{\\mathbf F}\n =\\frac{1}{|\\Omega_m|}\\int_{\\Omega_m}\\mathbf P_m:\\delta\\mathbf F_m\\,\\dd V.",
+    "meaning": "Require average micro-scale incremental power to equal corresponding macroscopic stress power.",
+    "flow": "RVE response → energetically consistent scale transfer.",
+    "stage": "CONTINUUM",
+    "source_label": "eq:HM"
+  },
+  {
+    "number": 21,
+    "name": "Incremental homogenized energy potential",
+    "latex": "\\overline\\Pi_{n+1}(\\overline{\\mathbf F},\\overline{\\mathbf q})\n =\\frac{1}{|\\Omega_m|}\\inf_{\\widetilde{\\mathbf w},\\mathbf q_m}\n \\int_{\\Omega_m}\\!\\big[\\psi_m(\\mathbf F_m,\\mathbf q_m)+\n \\mathcal D_m(\\mathbf q_m,\\mathbf q_m^{n})\\big]\\,\\dd V.",
+    "meaning": "Find homogenized incremental energy by minimizing micro energy and dissipation with respect to fluctuations and internal fields.",
+    "flow": "Micro free energy + dissipation → effective incremental potential.",
+    "stage": "CONTINUUM",
+    "source_label": "eq:increment"
+  },
+  {
+    "number": 22,
+    "name": "Macroscopic stress and tangent modulus",
+    "latex": "\\overline{\\mathbf P}=\\frac{\\partial\\overline\\Pi}{\\partial\\overline{\\mathbf F}},\\qquad\n \\overline{\\mathbb A}=\\frac{\\dd\\overline{\\mathbf P}}{\\dd\\overline{\\mathbf F}}.\n ",
+    "meaning": "Differentiate the homogenized potential for stress and its consistent algorithmic tangent.",
+    "flow": "Effective potential → macro stress and tangent stiffness.",
+    "stage": "CONTINUUM",
+    "source_label": "eq:tangent"
+  },
+  {
+    "number": 23,
+    "name": "Consistent tangent via Schur complement",
+    "latex": "\\overline{\\mathbb A}_{\\mathrm{alg}}\\simeq\n \\frac{1}{|\\Omega_m|}\\left(\\mathbf K_{FF}\n -\\mathbf K_{Fw}\\mathbf K_{ww}^{-1}\\mathbf K_{wF}\\right),",
+    "meaning": "Condense microscale fluctuation degrees of freedom to obtain a homogenized tangent via Schur complement.",
+    "flow": "Coupled micro tangent blocks → effective macro tangent.",
+    "stage": "CONTINUUM",
+    "source_label": "eq:schur"
+  },
+  {
+    "number": 24,
+    "name": "Thermodynamic dissipation inequality",
+    "latex": "\\mathcal D=\\mathbf P:\\dot{\\mathbf F}-\\dot\\psi-\\eta\\dot T\n -\\frac{1}{T}\\mathbf q\\cdot\\nabla T\\ge0,",
+    "meaning": "Enforce the second law through nonnegative mechanical-thermal dissipation.",
+    "flow": "Stress, energy, temperature and heat flux → admissible constitutive behavior.",
+    "stage": "CONTINUUM",
+    "source_label": "eq:CD"
+  },
+  {
+    "number": 25,
+    "name": "Fluctuation index and correlation length",
+    "latex": "\\mathcal I(L)=\\frac{\\operatorname{Var}[\\avg{\\Delta\\varepsilon^p}_{\\Omega_L}]}\n {\\mathbb E[\\avg{\\Delta\\varepsilon^p}_{\\Omega_L}]^2+\\epsilon},\\qquad\n \\ell_c=\\frac{\\int_0^\\infty r\\,|C(r)|\\,\\dd r}{\\int_0^\\infty |C(r)|\\,\\dd r}.",
+    "meaning": "Measure relative fluctuations as RVE size changes and extract a characteristic spatial correlation length.",
+    "flow": "Field statistics → RVE adequacy and localization length estimates.",
+    "stage": "CONTINUUM",
+    "source_label": "eq:indicators"
+  },
+  {
+    "number": 26,
+    "name": "Finite-strain plastic flow rule",
+    "latex": "\\mathbf L^p=\\dot{\\mathbf F}^p(\\mathbf F^p)^{-1}\n =\\sum_{e}\\overline k_e\\,\\mathbf S_e^p\\quad\\text{or}\\quad\n \\mathbf L^p=\\mathcal L(\\mathbf M,T,\\mathbf q,\\nabla\\mathbf q),",
+    "meaning": "Represent finite-strain plastic flow by the plastic velocity gradient or a constitutive evolution function.",
+    "flow": "Coarse event rates and orientations → finite-strain plastic kinematics.",
+    "stage": "CONTINUUM",
+    "source_label": "eq:finiteflow"
+  },
+  {
+    "number": 27,
+    "name": "Acoustic tensor and localization criterion",
+    "latex": "\\mathbf Q(\\mathbf n)=\\mathbf n\\cdot\\mathbb C_{\\mathrm{alg}}\\cdot\\mathbf n,\n \\qquad\\min_{\\|\\mathbf n\\|=1}\\det\\mathbf Q(\\mathbf n)\\to0,",
+    "meaning": "Check loss of ellipticity of the algorithmic acoustic tensor over possible band normals as a localization indicator.",
+    "flow": "Continuum tangent → candidate strain-localization directions.",
+    "stage": "FRACTURE",
+    "source_label": "eq:acoustic"
+  },
+  {
+    "number": 28,
+    "name": "Phase-field plasticity/fracture energy",
+    "latex": "\\mathcal E(\\mathbf u,d,\\mathbf q)=\\int_\\Omega\\!\n \\left[g(d)\\psi_e^+(\\mathbf F^e,\\chi)+\\psi_e^-(\\mathbf F^e,\\chi)\n +\\psi_{\\mathrm{hard}}(\\mathbf q)\n +\\frac{G_c(\\mathbf q,T)}{2}\\left(\\frac{d^2}{\\ell_d}+\\ell_d|\\nabla d|^2\\right)\\right]\\dd V\n -W_{\\mathrm{ext}},",
+    "meaning": "Combine tensile/compressive elastic contributions, hardening and a regularized damage/fracture energy with an independent toughness parameter.",
+    "flow": "Elastic-plastic fields and fracture calibration → coupled energy functional.",
+    "stage": "FRACTURE",
+    "source_label": "eq:phase"
+  },
+  {
+    "number": 29,
+    "name": "Irreversible incremental fracture evolution",
+    "latex": "(\\mathbf u_{n+1},d_{n+1},\\mathbf q_{n+1})\n \\in\\operatorname*{argmin}_{d\\ge d_n,\\,0\\le d\\le1}\n \\left\\{\\mathcal E(\\mathbf u,d,\\mathbf q)+\\mathcal D_{n\\to n+1}(\\mathbf q)\\right\\},",
+    "meaning": "Minimize the updated incremental functional subject to damage irreversibility and phase-field bounds.",
+    "flow": "Energy functional and prior damage → admissible crack evolution.",
+    "stage": "FRACTURE",
+    "source_label": "eq:phaseinc"
+  },
+  {
+    "number": 30,
+    "name": "Quantitative normalized validation error",
+    "latex": "\\mathcal E_y=\\left[\\frac{1}{N_v}\\sum_{i=1}^{N_v}\n \\frac{(\\widehat y_i-y_i)^2}{s_i^2+\\epsilon}\\right]^{1/2},",
+    "meaning": "Compute a scale-normalized RMS prediction error over independent validation cases.",
+    "flow": "Model predictions and observations → quantitative evidence for or against the bridge.",
+    "stage": "VALIDATION",
+    "source_label": "eq:validation"
+  }
+]
