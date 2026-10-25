@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DFG Proposal | S. Swayamjyoti</title>
+  <meta name="description" content="Separate DFG proposal page with colourful flowcharts, work packages, figures, and downloadable source materials.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">S<span>.</span></span><span>DFG PROPOSAL</span></a>
+      <nav class="subnav" aria-label="DFG proposal navigation">
+        <a href="#overview">Overview</a>
+        <a href="#flowcharts">Flowcharts</a>
+        <a href="#work-packages">Work Packages</a>
+        <a href="#figures">Figures</a>
+        <a href="#downloads">Downloads</a>
+        <a class="back-link" href="../index.html">Back to portfolio ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">DFG RESEARCH PROPOSAL · METALLIC GLASSES · 36 MONTHS</p>
+          <h1>From atomistic local structural excitations to plasticity and fracture in <em>metallic glasses.</em></h1>
+          <p class="hero-subtitle">Rate-preserving kinetic scale bridging, stochastic elastoplasticity and variational homogenization.</p>
+          <p class="hero-text">This dedicated page presents the uploaded DFG proposal as a structured web summary. It highlights the project logic, scientific objectives, transfer mechanisms across scales, work packages, and a large set of colourful flowcharts and visual figures.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#flowcharts">See colourful flowcharts</a>
+            <a class="button secondary" href="#downloads">Download proposal source</a>
+          </div>
+        </div>
+        <div class="fact-panel">
+          <div class="fact-card"><span>Applicants</span><strong>Prof. Dr. Franz Bamer &amp; Dr. sc. ETH Zurich S. Swayamjyoti</strong></div>
+          <div class="fact-card"><span>Duration</span><strong>36 months</strong></div>
+          <div class="fact-card"><span>Core methods</span><strong>ARTn · AQS · STZ kinetics · Homogenization · Fracture</strong></div>
+          <div class="fact-card"><span>Scientific theme</span><strong>Scale bridging from local structural excitations to continuum response</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">01 / OVERVIEW</p>
+            <h2>Proposal <em>summary.</em></h2>
+          </div>
+          <p class="lede">Metallic glasses combine high strength with highly heterogeneous plastic response, atomic-scale rearrangements, strain localization and sudden failure. This proposal bridges atomistic events, mesoscale stochastic plasticity, continuum localization, and fracture within one validated computational framework.</p>
+        </div>
+        <div class="overview-grid">
+          <article class="overview-card red"><h3>Central question</h3><p>Which atomistic signatures survive scale transfer, and when can they be averaged out versus modeled explicitly?</p></article>
+          <article class="overview-card blue"><h3>Scientific objective</h3><p>Develop rules that transfer physically weighted transition rates, eigenstrains and renewal into mesoscale and continuum models.</p></article>
+          <article class="overview-card green"><h3>Expected outcome</h3><p>A documented computational framework with falsifiable transfer laws, localization criteria, and separate fracture treatment.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="flowcharts" class="section alt">
+      <div class="container">
+        <div class="section-head narrow">
+          <div>
+            <p class="section-kicker">02 / FLOWCHARTS</p>
+            <h2>Colourful proposal <em>flowcharts.</em></h2>
+          </div>
+          <p class="lede">The page includes multiple colorful flow diagrams: custom process maps plus the uploaded transfer flowcharts from the proposal materials.</p>
+        </div>
+
+        <div class="flow-boxes">
+          <article class="flow-card">
+            <h3>Multiscale project roadmap</h3>
+            <div class="roadmap">
+              <div class="step red"><span>1</span><strong>Reference ensembles</strong><p>Metallic-glass states, composition, quench history and local structure.</p></div>
+              <div class="arrow">→</div>
+              <div class="step blue"><span>2</span><strong>ARTn &amp; AQS</strong><p>Thermal and athermal event discovery, barriers, instability and descriptors.</p></div>
+              <div class="arrow">→</div>
+              <div class="step green"><span>3</span><strong>Event descriptors</strong><p>Transformation strain, orientation, reversibility and renewal.</p></div>
+              <div class="arrow">→</div>
+              <div class="step red"><span>4</span><strong>Mesoscale events</strong><p>Elastic redistribution, avalanches and persistent shear bands.</p></div>
+              <div class="arrow">→</div>
+              <div class="step blue"><span>5</span><strong>Continuum closure</strong><p>Work-consistent homogenization, localization and constitutive evolution.</p></div>
+              <div class="arrow">→</div>
+              <div class="step green"><span>6</span><strong>Fracture law</strong><p>Separate damage / decohesion mechanism with independent calibration.</p></div>
+            </div>
+          </article>
+
+          <article class="flow-card">
+            <h3>Dual-path atomistic discovery</h3>
+            <div class="branch-flow">
+              <div class="branch-top">Metallic-glass reference ensembles</div>
+              <div class="branch-columns">
+                <div class="branch red"><h4>Thermally activated branch</h4><p>ARTn minima → saddle → minima</p><p>Barrier and rate statistics</p></div>
+                <div class="branch blue"><h4>Athermal branch</h4><p>AQS strain increment → minimization</p><p>Hessian softening and instability</p></div>
+              </div>
+              <div class="branch-bottom green">Shared event descriptors → interacting mesoscale events → continuum localization → separate fracture extension</div>
+            </div>
+          </article>
+
+          <article class="flow-card">
+            <h3>Validation and information-transfer audit</h3>
+            <div class="audit-grid">
+              <div class="audit-item red"><strong>Transfer I</strong><span>Barrier statistics &amp; freezing</span></div>
+              <div class="audit-item blue"><strong>Transfer II</strong><span>STZ diagnostics &amp; kinetics</span></div>
+              <div class="audit-item green"><strong>Transfer III</strong><span>Homogenization &amp; localization</span></div>
+              <div class="audit-item black"><strong>Cross-check</strong><span>What survives each bridge?</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="image-grid flow-images">
+          <figure class="image-card"><img src="assets/images/scale_bridging/derlet_maass_transfer_flowchart.png" alt="Atomistic to mesoscale I: activation-statistics bridge after Derlet–Maass."><figcaption>Atomistic to mesoscale I: activation-statistics bridge after Derlet–Maass.</figcaption></figure>
+          <figure class="image-card"><img src="assets/images/scale_bridging/falk_langer_bamer_transfer_flowchart.png" alt="Atomistic to mesoscale II: Bamer diagnostics linked with Falk–Langer STZ kinetics."><figcaption>Atomistic to mesoscale II: Bamer diagnostics linked with Falk–Langer STZ kinetics.</figcaption></figure>
+          <figure class="image-card"><img src="assets/images/scale_bridging/linder_miehe_transfer_flowchart.png" alt="Mesoscale to continuum III: homogenization, localization and continuum closure."><figcaption>Mesoscale to continuum III: homogenization, localization and continuum closure.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="work-packages" class="section">
+      <div class="container">
+        <div class="section-head narrow">
+          <div>
+            <p class="section-kicker">03 / WORK PACKAGES</p>
+            <h2>Five linked <em>work packages.</em></h2>
+          </div>
+          <p class="lede">The proposal is organized as overlapping work packages across 36 months, moving from atomistic foundations to scale transfer, localization, fracture, and validation.</p>
+        </div>
+        <div class="wp-grid">
+          <article class="wp-card red"><span>WP1 · M1–M12</span><h3>Reference metallic-glass states and atomistic event network</h3><p>Glass preparation, quench-rate and size tests, LAQs, participation, LSE morphology, and connected ARTn catalogues.</p></article>
+          <article class="wp-card blue"><span>WP2 · M8–M20</span><h3>Kinetics, thermal/athermal crossover and transfer</h3><p>Rates, prefactors, reversibility, full-cell strain, and event-response transfer rules.</p></article>
+          <article class="wp-card green"><span>WP3 · M15–M27</span><h3>Interacting plastic events, avalanches and shear bands</h3><p>Collective plasticity, event interactions, avalanches, and localization precursors.</p></article>
+          <article class="wp-card red"><span>WP4 · M21–M33</span><h3>Homogenization, continuum plasticity and fracture</h3><p>Work-consistent continuum closure, localization modelling, and a separate fracture law.</p></article>
+          <article class="wp-card blue"><span>WP5 · M27–M36</span><h3>Validation, reproducibility and dissemination</h3><p>Independent validation, uncertainty analysis, reusable software/data, publications, and final synthesis.</p></article>
+        </div>
+
+        <div class="timeline-chart">
+          <div class="timeline-head">
+            <span>Prior</span><span>3</span><span>6</span><span>9</span><span>12</span><span>15</span><span>18</span><span>21</span><span>24</span><span>27</span><span>30</span><span>33</span><span>36</span>
+          </div>
+          <div class="timeline-row"><strong>WP1</strong><div class="cells"><span class="prior"></span><span class="active green"></span><span class="active green"></span><span class="active green"></span><span class="active green"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+          <div class="timeline-row"><strong>WP2</strong><div class="cells"><span></span><span></span><span class="active blue"></span><span class="active blue"></span><span class="active blue"></span><span class="active blue"></span><span class="active blue"></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+          <div class="timeline-row"><strong>WP3</strong><div class="cells"><span></span><span></span><span></span><span></span><span></span><span class="active red"></span><span class="active red"></span><span class="active red"></span><span class="active red"></span><span class="active red"></span><span></span><span></span><span></span></div></div>
+          <div class="timeline-row"><strong>WP4</strong><div class="cells"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="active green"></span><span class="active green"></span><span class="active green"></span><span class="active green"></span><span></span><span></span></div></div>
+          <div class="timeline-row"><strong>WP5</strong><div class="cells"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="active blue"></span><span class="active blue"></span><span class="active blue"></span><span class="active blue"></span><span class="active blue"></span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="figures" class="section alt">
+      <div class="container">
+        <div class="section-head narrow">
+          <div>
+            <p class="section-kicker">04 / FIGURES</p>
+            <h2>Scientific figures from the uploaded <em>proposal set.</em></h2>
+          </div>
+          <p class="lede">These visual materials were bundled with the uploaded proposal archive and are presented here to support the project narrative.</p>
+        </div>
+        <div class="image-grid">
+          <figure class="image-card"><img src="assets/images/refine/fig_01_multiscale_hierarchy.png" alt="Multiscale hierarchy"><figcaption><strong>Multiscale hierarchy</strong><span>Conceptual scale hierarchy from atomistic rearrangements to fracture.</span></figcaption></figure>
+          <figure class="image-card"><img src="assets/images/refine/fig_02_atomic_structure_lse.png" alt="Atomic LSE motifs"><figcaption><strong>Atomic LSE motifs</strong><span>Reference amorphous structure with localized ring-like and chain-like excitations.</span></figcaption></figure>
+          <figure class="image-card"><img src="assets/images/refine/fig_04_transition_channels.png" alt="Transition channels"><figcaption><strong>Transition channels</strong><span>Event connectivity and transition pathways across metastable states.</span></figcaption></figure>
+          <figure class="image-card"><img src="assets/images/refine/fig_05_shear_vs_barrier.png" alt="Shear vs barrier"><figcaption><strong>Shear vs barrier</strong><span>Barrier landscape versus mechanical loading and plastic response.</span></figcaption></figure>
+          <figure class="image-card"><img src="assets/images/refine/fig_06_escape_rate.png" alt="Escape rates"><figcaption><strong>Escape rates</strong><span>Kinetic escape-rate concept and timescale crossover.</span></figcaption></figure>
+          <figure class="image-card"><img src="assets/images/refine/fig_08_avalanche.png" alt="Avalanches"><figcaption><strong>Avalanches</strong><span>Collective plastic activity and interacting local events.</span></figcaption></figure>
+          <figure class="image-card"><img src="assets/images/refine/fig_10_shear_band.png" alt="Shear-band emergence"><figcaption><strong>Shear-band emergence</strong><span>Localization patterns at larger scales.</span></figcaption></figure>
+          <figure class="image-card"><img src="assets/images/refine/fig_11_stz_populations.png" alt="STZ populations"><figcaption><strong>STZ populations</strong><span>Population-based representation of local transformations.</span></figcaption></figure>
+          <figure class="image-card"><img src="assets/images/refine/fig_12_phase_field_scalar.png" alt="Phase-field localization"><figcaption><strong>Phase-field localization</strong><span>Continuum-scale localization / damage visualization.</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="downloads" class="section">
+      <div class="container">
+        <div class="section-head narrow">
+          <div>
+            <p class="section-kicker">05 / DOWNLOADS</p>
+            <h2>Proposal files and <em>source materials.</em></h2>
+          </div>
+          <p class="lede">Use these links to download the uploaded proposal archive and editable source files.</p>
+        </div>
+        <div class="download-grid">
+          <a class="download-card red" href="DFG_multiscale_proposal_expanded_editable.zip" download><strong>Proposal source ZIP</strong><span>Original uploaded archive</span></a>
+          <a class="download-card blue" href="proposal_revised.tex" download><strong>proposal_revised.tex</strong><span>Main LaTeX proposal text</span></a>
+          <a class="download-card green" href="flowchart.tex" download><strong>flowchart.tex</strong><span>Editable multiscale flowchart</span></a>
+          <a class="download-card red" href="gantt_chart.tex" download><strong>gantt_chart.tex</strong><span>Editable schedule / timeline chart</span></a>
+          <a class="download-card blue" href="FIGURE_MANIFEST.tsv" download><strong>FIGURE_MANIFEST.tsv</strong><span>Figure manifest and checksums</span></a>
+          <a class="download-card green" href="README.txt" download><strong>README.txt</strong><span>Compilation and package notes</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>DFG proposal page for S. Swayamjyoti</span>
+      <a href="../index.html">Return to portfolio</a>
+    </div>
+  </footer>
+</body>
+</html>

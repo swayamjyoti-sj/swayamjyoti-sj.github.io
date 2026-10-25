@@ -1,0 +1,591 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.25cm,headheight=15pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\pdfmapfile{+lm.map}
+\pdfmapfile{+symbols.map}
+\pdfmapfile{+cm.map}
+\pdfmapfile{+cmextra.map}
+\usepackage{amsmath,amssymb,amsthm,bm,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,enumitem}
+\usepackage{caption,subcaption,float,placeins}
+\usepackage{xcolor,hyperref,fancyhdr,titlesec}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black}
+\definecolor{navy}{HTML}{1C304F}\definecolor{teal}{HTML}{078E98}
+\titleformat{\section}{\Large\bfseries\color{black}}{\thesection}{.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{black}}{\thesubsection}{.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{black}}{\thesubsubsection}{.6em}{}
+\setlength{\parskip}{5pt}\setlength{\parindent}{0pt}
+\captionsetup{font=small,labelfont=bf,justification=raggedright,singlelinecheck=false}
+\pagestyle{fancy}\fancyhf{}\lhead{\small Project Description -- Metallic Glasses}\rhead{\small DFG Research Proposal Draft}\cfoot{\thepage}
+\newcommand{\figfile}[1]{figures/refine/#1.png}
+\newcommand{\putfig}[4]{\begin{figure}[p]\centering\includegraphics[width=#2\textwidth,height=.72\textheight,keepaspectratio]{\figfile{#1}}\caption{#3 \emph{#4}}\label{fig:#1}\end{figure}}
+\newcommand{\dd}{\mathrm{d}}\newcommand{\avg}[1]{\left\langle #1\right\rangle}\newcommand{\Grad}{\operatorname{Grad}}
+\begin{document}
+\begin{center}
+{\small\bfseries Project Description -- Project Proposals}\par\vspace{8pt}
+{\LARGE\bfseries\color{black}From Atomistic Local Structural Excitations to Plasticity and Fracture in Metallic Glasses}\par\vspace{8pt}
+{\large Rate-preserving kinetic scale bridging, stochastic elastoplasticity and variational homogenization}\par\vspace{10pt}
+{\normalsize Applicant(s): \textbf{\underline{Prof. Dr. Franz Bamer} and Dr. sc. ETH Zurich \underline{S. Swayamjyoti}} \quad | \quad Proposed duration: \textbf{36 months}}\par
+\end{center}
+\vspace{6pt}
+
+\textbf{Project description (English).} Metallic glasses combine high strength with highly heterogeneous plastic response, atomic-scale rearrangements, strain localization and sudden failure. These phenomena originate in local structural excitations (LSE) between metastable atomic configurations in the atomistic potential energy landscape (PEL) of glasses. Yet the direct extrapolation of microscopic activation barriers to engineering scale constitutive and fracture properties remains unclear. In this project, we will employ the activation-relaxation technique nouveau (ARTn) in the thermally activated regime which identify LSEs and athermal quasistatic (AQS) calculations in the athermal/stress-driven regime which lead to shear transformation zones (STZ), the latter of which was first postulated by Falk and Langer. The atomistic model will map to a catalogue of elementary transitions in the atomistic potential energy landscape (PEL) of the glass; transferring physically weighted transition rates, transformation eigenstrains and structural renewal into mesoscopic stochastic  elastoplasticity; and deriving work-consistent continuum closures with independently evaluated localization and fracture laws. The ingredients are distinct rather than competing substitutes: Mousseau's saddle-search methods; the barrier and freezing statistics of Derlet--Maa\ss{}; the athermal, stress-driven instability and STZ diagnostics explored by \underline{Bamer}; Falk--Langer population kinetics; Miehe's variational localization and homogenization methods; and Linder's micromechanically informed continuum modeling. We will explicitly distinguish thermally activated events from athermal stress-driven instabilities, and strain localization or shear bands from the onset of material separation or decohesion, believing the latter is real fracture in glasses. Work packages combine microscopic characterization, kinetic transfer, collective plasticity, continuum plasticity--fracture coupling and  validation across length scales. The goal is to develop and scale bridging rules and a computational framework that show when small-scale effects can be averaged out and when fluctuations and interactions over length-scales must be modeled explicitly.
+\clearpage
+\textbf{Projektbeschreibung (Deutsch).} Metallische Gläser verbinden hohe Festigkeit mit einem stark heterogenen plastischen Verhalten, intermittierenden Umlagerungen, Dehnungslokalisierung und möglicherweise abruptem Versagen. Diese Phänomene haben ihren Ursprung in lokalen Übergängen zwischen metastabilen atomaren Konfigurationen; die direkte Übertragung mikroskopischer Aktivierungsbarrieren auf konstitutive Eigenschaften und Brucheigenschaften auf Strukturebene ist jedoch weiterhin ungeklärt. Wir schlagen ein koordiniertes dreijähriges Programm vor, das die Activation--Relaxation Technique nouveau (ARTn) und atherme quasistatische (AQS) Berechnungen mit einem zustandsabhängigen Katalog elementarer Übergänge verknüpft, physikalisch gewichtete Übergangsraten, Transformationseigendehnungen und strukturelle Erneuerung in eine stochastische mesoskopische Elastoplastizität überträgt und arbeitskonsistente Kontinuumsformulierungen mit unabhängig bestimmten Lokalisierungs- und Bruchgesetzen herleitet. Die Bestandteile sind eigenständig und keine konkurrierenden Alternativen: Mousseaus Sattelpunkt-Suchverfahren; die Barrieren- und Einfrierstatistiken von Derlet--Maa\ss{}; die von \underline{Bamer} untersuchten athermen, spannungsgetriebenen Instabilitäten und STZ-Diagnoseverfahren; die Falk--Langer-Populationskinetik; Miehes variationelle Lokalisierungs- und Homogenisierungsmethoden; und Linders mikromechanisch fundierte Kontinuumsmodellierung. Wir werden thermisch aktivierte Ereignisse ausdrücklich von athermen mechanischen Instabilitäten und Scherlokalisierung vom Beginn der Materialtrennung unterscheiden. Fünf überlappende Arbeitspakete verbinden mikroskopische Charakterisierung, kinetische Übertragung, kollektive Plastizität, die Kopplung von Kontinuumsplastizität und Bruch sowie skalenübergreifende Validierung. Als Ergebnis werden validierte Regeln zur Skalenübertragung und ein dokumentiertes Berechnungsframework erwartet, das aufzeigt, wann deterministische Homogenisierung zulässig ist und wann Fluktuationen und nichtlokale Wechselwirkungen weiterhin aufgelöst werden müssen.
+
+\clearpage
+{\small\hypersetup{linkcolor=blue,linktoc=all}\tableofcontents}
+\clearpage
+\section{Starting point}
+\subsection{State of the art and scientific context}
+Metallic glasses lack the crystalline defect geometry on which classical dislocation-based plasticity rests. Under imposed deformation, metastable atomic configurations deform non-affinely and occasionally undergo collective rearrangements. Such local structural excitations (LSEs) can be chain-like or ring-like; their spatial extent, barrier, reversibility and far-field response depend on the surrounding atomic configuration. Not every LSE is a net irreversible shear transformation. Conversely, an STZ is a coarse-grained, shear-transformable configuration rather than a prescribed fixed-size atomic cluster. The first task is therefore to determine which experimentally or computationally observable signatures survive a change of description.
+
+Figure~\ref{fig:fig_01_multiscale_hierarchy} introduces the four-level information flow: local transitions supply mechanical event descriptors, interacting events create collective slip, the continuum represents averaged plastic flow, and a separate decohesion law is needed for fracture. The atomic sketches identify localized rearrangements, whereas the mesoscopic motifs emphasize interacting events; the continuum and fracture panels require distinct state variables and constitutive checks. Figure~\ref{fig:fig_02_atomic_structure_lse} compares a reference inherent structure with a configuration containing localized ring-like and chain-like rearrangements. The highlighted motifs distinguish a closed displacement sequence from cooperative neighbour replacement along an open string. Most of the surrounding configuration is visually unchanged, emphasizing that the event core occupies only part of the system. The reference-system label and displacement arrows are schematic annotations; neither event frequency nor a physical displacement scale can be inferred from them. 
+
+The microscopic interpretation follows \underline{Swayamjyoti}'s doctoral thesis, especially Chapter~4, Figs.~4.12--4.13 and Chapter~5: a central sequence of atoms moves approximately into neighbouring atomic positions, while smaller surrounding displacements accommodate the core \cite{swaythesis,sway2014,sway2016}. String-like geometry is therefore a cooperative rearrangement, not a single atom jumping through an otherwise fixed cage. Derlet and Maa\ss{}'s 32,000-atom binary-glass simulations connect thermally activated LSE activity to microplasticity and structural relaxation \cite{derletmicro2021}; the related study by Derlet, Bocquet and Maa\ss{} explicitly identifies strings of atomic motion and their long-range shear response \cite{derlettransport2021}. These larger-system results complement the thesis's smaller ARTn systems. They do not imply that every LSE creates permanent macroscopic shear or that an open string necessarily forms a shear band.
+\putfig{fig_01_multiscale_hierarchy}{1.0}{Conceptual scale hierarchy for metallic glasses: atomistic rearrangements, mesoscopic interactions, continuum plastic flow and failure.}{Supplied conceptual redraw; schematic rather than simulation output.}
+\putfig{fig_02_atomic_structure_lse}{1.0}{Reference amorphous structure and localized ring-like and chain-like LSE morphologies.}{Supplied schematic; highlighted event cores and displacement arrows illustrate cooperative motion rather than new simulation measurements.}
+
+\paragraph{Recent structure--dynamics and descriptor developments.}
+The review coauthored by \underline{Swayamjyoti} connects metallic-glass energy landscapes, soft spots, structural correlations and data-driven property predictions \cite{swayreview2025}. The joint \underline{Bamer}--\underline{Swayamjyoti} work by Liu et al.\ explores quasivoids in polydisperse glassy systems using ART$n$ and an iso-configuration method \cite{quasivoids2026}. It provides a concrete bridge between fragmented-free-volume motifs and PEL-resolved rearrangements, while its transfer to the selected metallic-glass alloys remains a hypothesis to test. For structural descriptions, spectral and community-based analyses in particulate assemblies offer candidate descriptors of spatial organization \cite{swayvisual2022,swaymodularity2020}; their predictive value for barriers and event initiation must be assessed independently.
+
+\subsubsection{Energy landscapes and atomic transition networks}
+For atomic coordinates $\mathbf r=(\mathbf r_1,\ldots,\mathbf r_N)$, deformation gradient $\mathbf F$ and structural parameters $\mathbf z$, the potential energy $U(\mathbf r;\mathbf F,\mathbf z)$ defines inherent structures $A,B$ through
+\begin{align}
+ \nabla_{\mathbf r} U(\mathbf r_A)=\nabla_{\mathbf r}U(\mathbf r_B)=\mathbf 0,\qquad
+ \mathbf H_A=\nabla^2_{\mathbf r}U(\mathbf r_A),\quad\lambda_{\min}^{+}(\mathbf H_A)>0.\label{eq:inherent}
+\end{align}
+The first-order saddle $S$ linking two minima satisfies $\nabla U(\mathbf r_S)=0$ and its constrained Hessian has one unstable mode. Forward and reverse potential-energy barriers are
+\begin{equation}
+\Delta E^{\ddagger}_{A\to B}=U(\mathbf r_S)-U(\mathbf r_A),\qquad
+\Delta E^{\ddagger}_{B\to A}=U(\mathbf r_S)-U(\mathbf r_B).\label{eq:barriers}
+\end{equation}
+Under finite temperature the relevant quantity is in general an activation \emph{free} energy $\Delta G^\ddagger$ rather than solely $\Delta E^\ddagger$. Following Barkema and Mousseau, ARTn samples first-order saddle connections without prescribing a terminal atomic state; nudged elastic band refinements can verify selected pathways \cite{barkema1996,mousseau1998,mousseau2012}. Discovery frequency is not physical event frequency.
+
+The schematic of the atomistic Potential Energy Landscape in Figure~\ref{fig:fig_02_atomic_structure_lse}B makes the two barrier definitions explicit. The curve connects initial minimum $A$ to final minimum $B$ through saddle $S$; the forward barrier is measured upward from $A$, while the reverse barrier is measured from $B$. Unequal minimum energies therefore produce different forward and reverse barriers even for the same connection. The horizontal reaction coordinate parameterizes a collective rearrangement and is not elapsed time. This potential-energy sketch does not include vibrational entropy or a rate prefactor, so the curve alone cannot determine a finite-temperature waiting time.
+
+\subsubsection{Statistical kinetics and mechanical instability}
+\underline{Swayamjyoti}, L\"offler and Derlet characterized LSE morphologies and load-dependent barriers \cite{sway2014,sway2016}. Derlet and Maa\ss{} emphasized barrier populations, low-barrier extreme statistics and the freezing of accessible processes on finite observation times \cite{derlet2011,derlet2013,derlet2014}. A stress-conditioned channel $e$ in region $a$ has the provisional transition-state-theory rate
+\begin{equation}
+ k_{ae}(\bm\sigma,T,\mathbf z_a)=\nu_{ae}(\bm\sigma,T,\mathbf z_a)
+ \exp\!\left[-\frac{\Delta G^\ddagger_{ae}(\bm\sigma,T,\mathbf z_a)}{k_{\mathrm B}T}\right],\label{eq:rate}
+\end{equation}
+provided that local metastability, a meaningful prefactor and separation of vibrational and hopping timescales hold. At sufficiently low $T$, an athermal trajectory instead follows a basin until a stability eigenvalue approaches zero:
+\begin{equation}
+ \lambda_{\min}^{+}\!\big(\mathbf H(\gamma)\big)\to0^+,\qquad
+ \partial_{\mathbf r}U(\mathbf r,\gamma)=0,\qquad
+ \Delta E^\ddagger\sim C(\gamma_c-\gamma)^{3/2}\quad\text{(generic fold, if applicable)}.\label{eq:fold}
+\end{equation}
+The $3/2$ exponent is a conditional near-fold asymptotic form, not an imposed universal law. Thermally activated pathways and AQS instabilities will be examined as complementary regimes rather than conflated with one algorithm. Figure~\ref{fig:fig_04_transition_channels} organizes the catalogue as a matrix of local environments and transition channels. Different cell colours visualize channel-dependent barriers, while the alternative pathway curves show that distinct saddles can connect nearby regions of configuration space. The catalogue-validation sketch follows ARTn searches through saddle comparison to a set of unique channels, preserving connectivity and distinct barriers. Repeated discovery of the same connection must be distinguished from discovering a new channel; otherwise both catalogue completeness and transferred escape rates are biased. The matrix and curves are synthetic illustrations rather than measured barrier distributions. Figure~\ref{fig:fig_05_shear_vs_barrier} depicts the stress-dependent reduction of different barriers; its slopes are illustrative activation-volume sensitivities, and the shaded high-load region warns that linear barrier extrapolation must be checked against new ARTn searches and direct AQS instabilities.
+
+\paragraph{\underline{Bamer}'s athermal, stress-driven STZ perspective.}
+\underline{Bamer}, Ebrahem and collaborators provide a mechanical, zero-temperature complement to activation-rate statistics: their review of molecular mechanics of disordered solids works through affine strain increments, energy minimization, non-affine elastic relaxation, Hessian softening, localized plastic jumps, quadrupolar fields and cascades in a binary Lennard--Jones glass benchmark \cite{bamer2023}. In AQS one imposes a small strain increment, minimizes $U(\mathbf r;\gamma)$ at fixed imposed deformation and observes an instability when a stable equilibrium branch loses stability. The event is \emph{driven by load} rather than drawn from an Arrhenius clock. Finite increments must be refined to distinguish the first loss of stability from the multi-event relaxation triggered at fixed $\gamma$. The same program addresses prediction of susceptible regions from initial structure, but neither a low initial eigenvalue nor an identified soft spot uniquely predetermines an event under every loading direction.
+
+In a more recent study, \underline{Bamer} and coauthors correlated local bond-stretch fluctuation statistics with subsequent transformation sites under directional AQS loading of \emph{network/oxide glasses} \cite{bamer2026}. Its geometric predictors are a useful stress-direction-sensitive methodological hypothesis for metallic glasses, \emph{not} established metallic-glass STZ predictors: the connectivity, bonding and rearrangement physics must be reassessed in dense metallic packings. We will compare initial structural susceptibility, load-conditioned Hessian soft modes and actual irreversible non-affine event cores; the mismatch among them is itself an observable.
+\putfig{fig_04_transition_channels}{1.0}{Multiple physically distinct transition channels and catalogue-convergence checks.}{Synthetic catalogue visualization; colors do not quantify material properties.}
+\putfig{fig_05_shear_vs_barrier}{.95}{Stress sensitivity of representative activation channels and the need to re-sample barriers near instability.}{Schematic stress--barrier relations; slopes must be measured for the investigated glass.}
+
+\underline{Bamer} and coauthors' athermal analysis of Stone--Wales defects provides a controlled setting for studying how a local network defect changes mechanical response \cite{bamerstone2019}. Their Zachariasen-glass study resolves elementary plastic events under shear and pressure \cite{bamerevents2020}, while unloading simulations distinguish reversible from irreversible atomic rearrangements \cite{bamerreverse2020}. These support recording pressure sensitivity and reversibility separately in the event catalogue. The proceedings study of the boson peak under shear motivates monitoring load-dependent vibrational spectra alongside local stability \cite{bamerboson2023}. The silica-network STZ mapping study supplies a further benchmark for spatial predictions of rearrangements \cite{bamermapping2025}, complementary to the later geometrical-fingerprint paper \cite{bamer2026}. All of these network-glass results serve as methodological comparisons; their material-specific mechanisms and parameters will not be presumed valid for metallic glasses.
+
+\subsubsection{Mesoscale collective response and structural memory}
+Falk--Langer STZ approaches describe biased transitions of shear-transformable populations and evolving configurational state, with both thermal and athermal regimes \cite{falk1998,bouchbinder2007,falk2011}. A local rearrangement redistributes stress elastically, and a positive lobe of this redistribution may destabilize another region even without homogeneous global stress increase. The resulting avalanches depend on boundary conditions, preparation, system size and driving protocol. Spatially extended correlations can develop into persistent shear bands, but plastic slip does not by itself remove material cohesion. Figure~\ref{fig:fig_06_escape_rate} explains that selecting events by their normalized physical rates (not ARTn discovery counts) can make a small minority of channels govern the escape clock. Figure~\ref{fig:fig_07_eshelby} separates the localized rearrangement core from its quadrupolar elastic redistribution, whose positive lobes may trigger other regions. Figure~\ref{fig:fig_08_avalanche} then depicts the AQS sequence at fixed imposed deformation: one instability, neighbor triggering, and eventual mechanical restabilization. Figure~\ref{fig:fig_09_avalanche_scaling} shows the finite-size avalanche cutoff: increasing simulated size may extend the tail, so a nominal power law alone does not determine an exponent or establish universality.
+\putfig{fig_06_escape_rate}{.97}{Rate-preserving coarse-graining: a few fast channels may dominate total escape kinetics.}{Illustrative probabilities, not rates inferred from ARTn discovery counts.}
+\putfig{fig_07_eshelby}{.98}{Local atomic rearrangement and idealized quadrupolar Eshelby-type stress redistribution.}{The stress field is an analytical motif, not a measured atomistic stress map.}
+\putfig{fig_08_avalanche}{.98}{AQS cascade: local instability, elastic triggering and restoration of stability at fixed imposed deformation.}{Illustrative event sequence.}
+\putfig{fig_09_avalanche_scaling}{.94}{Finite-size dependence of avalanche probability distributions and associated cutoffs.}{Synthetic curves; exponents and cutoff laws are to be fitted from simulations.}
+
+\subsubsection{From collective plasticity to continuum constitutive response and fracture}
+\paragraph{Derlet--Maa\ss{} versus Miehe--Linder: a separation of physical questions.}
+Derlet--Maa\ss{} ask which \emph{thermally accessible microscopic barriers} govern finite-time plastic response and apparent kinetic freezing in a disordered solid \cite{derlet2011,derlet2013,derlet2014}; their primary variables are the evolving barrier population, its low-energy tail, observation time and activation kinetics. \underline{Bamer}'s AQS work instead asks which mechanically stable configuration fails first under imposed strain, how its non-affine displacement and local stability evolve, and whether the ensuing stress redistribution drives an avalanche \cite{bamer2023}. Neither line alone supplies a finite-strain, mesh-objective constitutive tangent or a fracture law.
+
+Miehe's finite-strain and incremental variational homogenization computes work-conjugate continuum stresses and algorithmic tangents from inelastic microscopic boundary-value problems \cite{miehe1999,miehe2002a,miehe2002b}. Crucially, Miehe and Lambrecht's two-scale \emph{small-strain shear-band relaxation} and their \emph{finite-strain microstructure-development} formulation address loss of convexity in strain-softening elastoplasticity by relaxation/laminate-type microshearing \cite{miehelambrecht2003,miehe2003band}. They are explicit precedents for mathematically handling localization and reducing spurious mesh dependence, \emph{not} measurements of metallic-glass STZ populations. Local work consistency and a relaxed incremental potential do not establish Arrhenius waiting times, preparation-dependent avalanches, or actual band widths.
+
+Linder-coauthored localization formulations provide more direct computational precedents for representing propagating bands. Jin, Mourad, Bronkhorst, Livescu, Zhang, Linder and Regueiro embed weak discontinuities in three-dimensional explicit finite elements and use global tracking to maintain band continuity under dynamic loading \cite{jinlinder2019}. Their applications concern rate- and temperature-sensitive metals; using this machinery for metallic glasses requires a separately calibrated amorphous-plasticity law. Linder and Raina's multilevel strong-discontinuity approach provides a framework for coupling a main boundary-value problem to local failure subdomains \cite{linderraina2013}. Linder and Zhang's marching-cubes formulation represents non-planar embedded failure surfaces in three dimensions \cite{linderzhang2013}. These are numerical representations of localization and failure, rather than established atomistic-to-continuum metallic-glass models.
+
+For distributed localization, Miehe's finite-strain variational gradient plasticity provides mixed potentials and additional fields for gradient-extended dissipative solids \cite{miehegradient2014}. For subsequent loss of cohesion, Miehe, Aldakheel and Raina couple finite-strain gradient plasticity and phase-field fracture with distinct plastic and damage length scales \cite{mieheductile2016}. We will assess these frameworks with metallic-glass-specific state evolution, localization measurements and fracture calibration. Earlier Linder--Tkachuk--Miehe transient-network and Linder-coauthored microsphere formulations concern rubber and remain secondary methodological analogues \cite{lindermiehe2011,linder2023}.
+
+\paragraph{Experimental counterpoint: the Glushko--Pippan--\c{S}opu--Mitterer--Eckert continuum hypothesis.}
+Glushko and colleagues directly tracked local strain around advancing and arrested shear bands in patterned thin-film metallic glasses \cite{glushko2024}. They propose a local elastic-strain threshold of approximately $5\%$ for band initiation and tip advance, alongside an observed arrest criterion of roughly $1.5$--$1.9\%$ von Mises strain ahead of the tip. These values belong to their interpretation and experimental geometry, not a universally established microscopic yield law. Their provocative claim is that prior collective STZ activation or structural rejuvenation need not be a necessary \emph{precursor} to the slip event; structural change may also be a consequence of the propagating band. Thus we will test stress/strain-controlled initiation and arrest \emph{alongside} precursor-based STZ models, rather than assume beforehand which causal ordering is correct. We will also distinguish the thin-film plane-stress conditions of that work from bulk 3D metallic glasses.
+
+Figure~\ref{fig:fig_10_shear_band} contrasts diffuse plastic events with a persistent, correlated shear path; the latter cannot be defined by one bright snapshot but requires time-resolved persistence, width and arrest measurements. Figure~\ref{fig:fig_11_stz_populations} shows the deliberately coarse-grained $c_+$/$c_-$ STZ switching populations and disorder renewal; it is a modeling closure rather than a one-to-one classification of ARTn events. Figure~\ref{fig:fig_12_phase_field_scalar} contrasts a plastic-strain band with a separate damage/cohesion field: shearing does not prove that a crack has opened.
+\putfig{fig_10_shear_band}{.97}{Distributed plasticity and a temporally persistent band of localized activity.}{Schematic fields; no band width is inferred.}
+In Fig.~\ref{fig:fig_11_stz_populations}, the orange $c_+$ and teal $c_-$ configurations represent two coarse-grained shear orientations. The outlined local motifs indicate their orientation within a grey atomic environment. The upper orange arrow is the $+\to-$ transition at rate $r_-$, and the lower teal arrow is the reverse transition at rate $r_+$. Thus the conversion fluxes are $r_-c_+$ and $r_+c_-$, respectively, giving the opposite-signed terms in Eq.~\eqref{eq:stzpop}. Switching alone conserves $c_++c_-$; creation and annihilation through $\Gamma_\pm$ alter the total population. The bottom strip adds stress-dependent barriers and disorder evolution $\chi$, which change future accessibility and rates. The connection to the thesis is its energy-landscape and atomic-transition interpretation, not a claim that the thesis measured $c_\pm$, $\Gamma_\pm$ or $\chi$ \cite{swaythesis,falk1998,bouchbinder2007}. The supplied diagram is a proposed kinetic abstraction; its colours label model states and are distinct from the activation/relaxation convention of the research flowchart.
+\putfig{fig_11_stz_populations}{.96}{Phenomenological STZ populations and disorder renewal informed by atomic rearrangement statistics.}{Conceptual proposed closure, not a unique atomistic STZ identification.}
+\putfig{fig_12_phase_field_scalar}{.97}{Different mechanical variables for accumulated plastic shear and loss-of-cohesion damage.}{The damage field is an intended extension; localization alone does not establish fracture.}
+
+Figure~\ref{fig:fig_12_phase_field_scalar} overlays local atomic-transition motifs on the plastic-strain and damage fields to connect microscopic activity with continuum variables. Those motifs are illustrative: an event on a plastic band does not establish that local cohesion has vanished. Figure~\ref{fig:fig_12_phase_field_scalar} presents the companion scalar-field view without atomic overlays. Its narrow diagonal plastic-strain ridge and separate curved damage ridge emphasize that accumulated slip and loss of cohesion need not have the same geometry. Their amplitudes, widths and relative positions require independent calibration; the images do not demonstrate a measured crack path.
+
+\subsection{Research-plan foundation and documented preliminary work}
+The scientific foundation of this proposal is \underline{Swayamjyoti}'s research plan, \emph{Microscopic structural excitations within model bulk metallic glass systems}, prepared within the PSI--ETH Zurich collaboration with Peter M. Derlet and J\"org F. L\"offler \cite{swayplan}. Its central question was how thermally activated atomic rearrangements generate glass plasticity, and how these rearrangements should be related to stress-driven STZs and to $\alpha$/$\beta$ relaxation. The present proposal carries forward that microscopic programme and extends it through event kinetics, interacting mesoscale regions and continuum mechanics. The preliminary findings below are reported in that supplied plan; they are historical evidence supporting feasibility, rather than new results produced for this application.
+
+\subsubsection{Thermal activation as the organizing physical question}
+The research plan starts from the mismatch between atomistic molecular-dynamics loading rates and experimentally accessible deformation rates. It contrasts MD rates above roughly $10^7\,\mathrm{s}^{-1}$ with experimental rates below roughly $10^0\,\mathrm{s}^{-1}$, motivating exploration of activated pathways beyond direct dynamical observation \cite{swayplan}. These are the motivating ranges quoted in the historical plan, rather than universal limits on present simulation methods. In the activated picture, thermal fluctuations permit escape from a metastable minimum and the applied stress biases which pathways release elastic energy. An event need not be aligned with the imposed loading, whereas an athermal instability is selected by the loss of mechanical stability along the driven trajectory.
+
+This distinction determines the present modelling strategy. We will catalogue both forward and reverse barriers, retain the sign and tensorial character of each event's mechanical contribution, and test the applicability of transition-state kinetics separately from AQS response. A barrier distribution is useful only together with its basin, preparation history, stress condition and sampling protocol. Likewise, microscopic activity is not sufficient evidence of macroscopic plastic strain: reversible local motion, irreversible relaxation and load-compatible shear must be measured separately.
+
+\subsubsection{Prepared glass ensembles and the transferable benchmark}
+The plan documents preparation of a 1:1 binary Lennard--Jones glass using the Wahnstr\"om parametrization. A high-temperature liquid is equilibrated under compressive pressure, quenched by reducing temperature and pressure in the $NPT$ ensemble, and finally relaxed by molecular statics to an inherent structure \cite{swayplan}. Its sample matrix contains system sizes of 1,728, 13,834, 110,592, 884,736 and 1,728,000 atoms. Three quench protocols were represented across that matrix, with an additional slower protocol for the smallest system. ARTn analysis reported in the plan focused on the four 1,728-atom samples; the existence of the larger prepared samples must not be interpreted as evidence that equally extensive saddle catalogues were already obtained for them.
+
+WP1 will use this preparation logic as a controlled methodological benchmark: quench history and size will be varied independently, residual forces and stresses will be checked, and initial inherent structures will be stored with reproducible metadata. The binary model isolates mechanisms and enables comparison with the prior LSE analysis. Extension to selected metallic-alloy potentials will require a separate assessment of structure, elastic response and relaxation behaviour. Neither Lennard--Jones energy units nor its event statistics will be transferred directly to an alloy without calibration.
+
+\subsubsection{ARTn pathway construction and acceptance criteria}
+The plan gives a concrete activation--relaxation workflow. Starting from a local minimum, an initial perturbation moves the system out of the harmonic basin while energy is minimized in directions transverse to the search direction. The lowest Hessian eigenpair is monitored; once negative curvature is encountered, the search follows the associated unstable direction toward a stationary saddle. Displacement away from the saddle followed by unconstrained relaxation identifies adjacent minima \cite{swayplan}. A valid LSE is the connected triplet of initial minimum, activated configuration and final minimum, with no intervening minimum on either connecting branch.
+
+This acceptance criterion becomes a mandatory catalogue check in WP1. Both sides of a candidate saddle will be relaxed and compared with the intended endpoint basins; force convergence, saddle index and removal of rigid translation modes will be recorded. Repeated discovery of the same connection will be distinguished from physically different channels. The historical plan also proposes using accepted final states as new starting minima. That iterative exploration is retained here, with the additional requirement that algorithmic pathway discovery be separated from physically weighted trajectory selection in WP2.
+
+\subsubsection{Local atomic quantities and displacement-weighted analysis}
+A major transferable contribution of the plan is its displacement-weighted comparison of an event core with the full glass environment. For the displacement $\Delta\mathbf r_i$ from the initial minimum to the saddle or to the final minimum, define
+\begin{equation}
+ w_i=\frac{|\Delta\mathbf r_i|^4}{\sum_j|\Delta\mathbf r_j|^4},\qquad
+ N_{\mathrm{part}}=\left(\sum_i w_i^2\right)^{-1},\qquad
+ \langle q\rangle_{\mathrm{LSE}}=\sum_iw_iq_i.
+ \label{eq:planweights}
+\end{equation}
+Here $q_i$ is a local atomic quantity (LAQ), such as cohesive energy, Voronoi volume or the lowest local eigenshear modulus. The same weighting convention will be used for the initial-to-saddle and initial-to-final legs so their statistics can be compared. Because fourth-power weights emphasize the most mobile atoms, participation values will always be reported with this definition and with sensitivity to alternative displacement thresholds. Cell deformation and periodic-image conventions will be accounted for before computing displacements.
+
+The plan identifies atom type and local shear softness as useful indicators of participation, but does not establish a unique structural predictor of barrier height. This motivates a two-part analysis: predict \emph{where events occur}, then independently test whether descriptors predict \emph{their barriers and rates}. WP1 will compare event-weighted and unweighted LAQ distributions, stratify by species and quench history, and use held-out basins to assess predictive performance. Species-induced shifts in cohesive energy or volume must be separated from additional effects within each species.
+
+\subsubsection{Preliminary morphology, barriers and limits of structural prediction}
+The supplied plan reports ring-like and extended chain-like LSE cores. In a closed ring, the final state can approximate a permutation of equivalent initial positions and leave little net far-field strain. In an extended sequence, one atom moves approximately into another's former position, with the surrounding environment accommodating the rearrangement through smaller displacements. Thus visual identification of a mobile cluster alone does not establish an irreversible plastic event \cite{swayplan}. WP1 will supplement core morphology with reverse-path tests, species-aware endpoint comparisons, residual deformation and event transformation tensors.
+
+For the studied binary-model samples, the plan reports a single-peaked barrier distribution over an approximate $5\epsilon$--$25\epsilon$ range, and effective participation commonly involving about one to seven atoms under its weighting convention. It finds no significant correlation between participation number and barrier energy. Smaller atoms are preferentially involved, with local cohesive-energy distributions indicating a stronger species bias than Voronoi-volume distributions. Its detailed analysis quotes a Pearson correlation of approximately 0.5 between event-weighted cohesive energy and barrier energy and approximately 0.3 for the lowest eigenshear modulus \cite{swayplan}. These moderate or weak relationships are sample-dependent findings, not universal constitutive laws; they also qualify the plan's broader statement that local structure alone has limited predictive power.
+
+The plan further reports that activated-state and final-state weighted statistics can differ for individual events while being similar after ensemble averaging. The proposed database will therefore preserve both event legs instead of replacing them by one average descriptor. Independent samples, uncertainty intervals and species-conditioned comparisons will test which historical trends persist under finite load and in other potentials. A poor barrier predictor will remain useful as a participation descriptor only if that narrower role is demonstrated.
+
+\subsubsection{From repeated LSEs to collective relaxation and far-field strain}
+The original forward programme is especially relevant to the proposed scale bridge: use successive ARTn endpoints to explore neighbouring minima, study sequences that climb within a landscape mega-basin, and compare zero-load sequences with those that release elastic energy under load \cite{swayplan}. It explicitly raises the unresolved question of how small reversible processes become larger irreversible relaxation events. In this proposal, $\beta$-like and $\alpha$-like behaviour will be assigned operationally using recurrence, reversibility, structural decorrelation and residual strain over a stated observation window. Neither a single saddle crossing nor bond breaking by itself will define either class.
+
+The plan also identifies a technical limitation of an orthorhombic simulation cell: repeated LSEs may generate general triclinic strain. It proposes extending the in-house mechanics using a full Parrinello--Rahman formulation. The present work retains the physical requirement rather than presuming that a particular historical code extension is already available. WP1--WP3 will compare fixed-cell and appropriately controlled variable-cell calculations, record the full stress and strain tensors, and distinguish imposed work from released elastic energy. This is the direct microscopic input to transformation eigenstrains, elastic event interactions and the work-consistency tests of WP4.
+
+The four original aims---prepare relaxed 3D glasses, identify LSEs, characterize their cores and environments, and relate them to STZ/$\alpha$/$\beta$ descriptions---therefore remain explicit objectives of WP1--WP3. The new elements are rate-preserving transfer, independent tests of collective localization and a separately calibrated fracture extension. Figure~\ref{fig:research_timetable} maps documented prior foundations and the prospective 36-month tasks onto the red/green time-plan format of the supplied research plan. 
+
+\subsection{Scientific gap and central research question}
+Existing approaches illuminate individual transitions, rate statistics, STZ-type population dynamics, computational homogenization and phase-field failure. Missing is a single \emph{verified}, rate-preserving and work-consistent pathway across those levels, including explicit tests of what information must not be averaged out. Our central research question is:
+\begin{quote}\itshape
+Under which physical and statistical conditions can atomistically identified, thermally activated structural transitions be transferred into predictive mesoscopic and continuum descriptions of yielding, avalanches, persistent shear bands and fracture in metallic glasses without erasing kinetics, elastic correlations, structural memory or the distinction between shear localization and material separation?
+\end{quote}
+The innovation is the tested \emph{connection} between established ingredients, not a claimed invention of ARTn, STZ theory, homogenization or phase-field fracture.
+
+\section{Objectives and hypotheses}
+\subsection{Anticipated duration}
+The project is proposed for \textbf{36 months}. Applicant identity, start date, requested positions, preliminary unpublished data and exact monetary amounts require completion by the applicant before submission.
+\subsection{Scientific objectives}
+\begin{enumerate}[label=O\arabic*.,leftmargin=*]
+\item Construct a converged and reversible network of atomistic transition channels with barrier distributions, transformation moments and explicit state descriptors.
+\item Establish statistically and physically defensible kinetic coarse-graining and contrast thermal activated rates with independently calculated athermal stability thresholds.
+\item Predict collective responses, avalanche statistics and onset, width, orientation and persistence of localization using event-resolved stochastic elastoplastic simulations.
+\item Identify finite-strain, work-consistent and thermodynamically admissible continuum closures; add a separately calibrated damage/fracture mechanism.
+\item Quantify predictive accuracy, sampling uncertainty, identifiability, cell-size dependence and the loss of information under homogenization on unseen metallic-glass structures.
+\end{enumerate}
+\subsection{Testable working hypotheses}
+\textbf{H1:} Physical activation rates and their low-barrier tails, not the arithmetic average of barriers or event-discovery counts, determine mesoscopic escape kinetics. \textbf{H2:} Stress redistribution and basin renewal set a temperature/loading-rate-dependent crossover from isolated activation to collective cascades. \textbf{H3:} A deterministic local continuum response becomes inadequate when event-count variance and spatial correlations remain of order one over the representative volume. \textbf{H4:} Persistent shear localization follows a competition between softening/rejuvenation and stabilizing mechanisms, whereas true separation needs additional damage, cavitation or decohesion physics.
+
+\section{Scientific approach and mathematical framework}
+\paragraph{Descriptor selection and data-driven analysis.}
+Candidate structural descriptors and surrogate analyses will be assessed against the metallic-glass structure--property synthesis \cite{swayreview2025} and the materials-modeling guidance of Das et al.\ \cite{swaychapter2020}. Spectral and spatial-community descriptors \cite{swayvisual2022,swaymodularity2020} will be compared with physically defined event moments and local stability measures. Validation will separate independently prepared glass realizations and loading histories to assess whether descriptor associations generalize beyond their calibration ensembles.
+
+\subsection{Reference atomistic ensembles and event descriptors}
+Use equilibrated binary model metallic glasses with controlled preparation history, specimen size, composition and quench protocol; assess selected realistic metallic-alloy potentials subject to independent validation of structural and mechanical benchmarks. Two-dimensional calculations serve only as controlled methodological benchmarks; predictive material findings will rely on appropriate three-dimensional glass models. In each initial basin, identify pathways with repeated ARTn starts, deduplicate saddles through geometry and energy criteria, match endpoints, refine selected paths and record forward/reverse barriers. An event descriptor is
+\begin{equation}
+ \mathcal E_e=\big( A_e,B_e,S_e,\Delta E_e^{\ddagger,+},\Delta E_e^{\ddagger,-},
+ \nu_e^\pm,\mathbf M_e,\mathbf Q_e,\ell_e,r_e,\mathbf z_e\big),\label{eq:descriptor}
+\end{equation}
+Project-defined catalogue schema in Eq.~\eqref{eq:descriptor}, assembled from the event descriptors in \cite{mousseau2012,sway2014,sway2016}; not copied from one published equation.
+where $\mathbf Q_e$ is an orientation measure, $\ell_e$ a spatial extent, $r_e$ a reversibility indicator and $\mathbf M_e$ the transformation moment. Extract non-affine displacement $\mathbf u_e^\mathrm{na}$ by subtracting the applied affine mapping and estimate
+\begin{equation}
+ \mathbf M_e=\int_{\Omega_e}\Delta\bm\varepsilon_e^p\,\dd V
+ \simeq V_e\Delta\bm\varepsilon_e^p,\qquad
+ \Delta G_e^\ddagger(\bm\sigma)\simeq\Delta G_e^\ddagger(\mathbf0)
+ -\bm\sigma:\mathbf V_e^\ddagger+O(\|\bm\sigma\|^2),\label{eq:moment}
+\end{equation}
+Equation~\eqref{eq:moment} combines the definition of an integrated transformation strain with a first-order stress expansion of the activation free energy; the load-dependent barrier motivation is \cite{sway2016}. The combined notation is adopted here.
+with activation-volume tensor $\mathbf V_e^\ddagger=-\partial\Delta G_e^\ddagger/\partial\bm\sigma$, distinguished from the irreversible transformation moment $\mathbf M_e$. Calibrate both rather than identify them by assumption.
+
+\subsection{Network kinetics, probabilities and sampling adequacy}
+For basin occupation probabilities $p_i$, rates $k_{i\to j}$ define a continuous-time master equation
+\begin{equation}
+ \dot p_i=\sum_{j\ne i}\big(k_{j\to i}p_j-k_{i\to j}p_i\big),\qquad
+ \sum_i p_i=1.\label{eq:master}
+\end{equation}
+Equation~\eqref{eq:master} is the continuous-time gain--loss master equation underlying stochastic event simulation \cite{gillespie1976}.
+The local escape rate and channel probability are
+\begin{align}
+ K_a=\sum_{e\in\mathcal A_a} k_{ae},\qquad
+ \mathbb P(e\mid a)=\frac{k_{ae}}{K_a},\qquad
+ \Delta t=-\frac{\ln u}{\sum_{a}K_a},\quad u\sim U(0,1),\label{eq:kmc}\\
+ \mathbb P(\text{at least one event within }t\mid a)=1-\exp(-K_a t).\label{eq:escape}
+\end{align}
+Equations~\eqref{eq:kmc}--\eqref{eq:escape} are the competing-exponential channel selection and waiting-time laws \cite{gillespie1976}, with rates frozen between updates.
+Here $\mathcal A_a$ must be updated following each basin change and elastic re-equilibration. When equilibrium conditions warrant it, detailed balance provides the consistency target
+\begin{equation}
+ \frac{k_{i\to j}}{k_{j\to i}}=\exp[-\beta(G_j-G_i)]\quad\text{for equilibrium reversible transitions},\qquad\beta=(k_\mathrm BT)^{-1}.\label{eq:balance}
+\end{equation}
+Equation~\eqref{eq:balance} is the equilibrium detailed-balance restriction for the transition network; it is imposed here on the master-equation framework of \cite{gillespie1976}, rather than inferred for driven glass states.
+Any driven, non-equilibrium ensemble must instead satisfy its appropriate kinetic consistency conditions. For distinct sampled rates $k_e$, averaging energy barriers first is generally incorrect:
+\begin{equation}
+ \sum_e \nu_e e^{-\beta\Delta G_e^\ddagger}
+ \ne \Big(\sum_e\nu_e\Big)e^{-\beta\avg{\Delta G^\ddagger}}.\label{eq:nonavg}
+\end{equation}
+Equation~\eqref{eq:nonavg} is a direct algebraic observation about the rate sum in Eq.~\eqref{eq:kmc}; it is not a separately borrowed empirical law. Its physical motivation is the barrier-population treatment in \cite{derlet2013}. Equality is possible in special cases, including identical barriers.
+Quantify coverage with repeated independent searches, re-discovery saturation and held-out channel discovery; characterize uncertainty of the low-barrier tail. Rate sensitivity is measured with
+\begin{equation}
+ \frac{\partial\log k_e}{\partial\sigma_{ij}}
+ =\frac{\partial\log\nu_e}{\partial\sigma_{ij}}-
+ \frac{1}{k_\mathrm BT}\frac{\partial\Delta G_e^\ddagger}{\partial\sigma_{ij}}.\label{eq:sens}
+\end{equation}
+Equation~\eqref{eq:sens} follows directly by logarithmic differentiation of Eq.~\eqref{eq:rate}; stress-dependent barriers are treated in \cite{sway2016}.
+A complementary AQS branch uses mechanical stability limits, \emph{not} extrapolation of a thermal waiting-time algorithm to $T=0$.
+
+\subsection{Statistical barriers, timescale crossover and kinetic freezing}
+Test candidate families for a state-conditioned barrier distribution $\rho(\Delta G\mid\mathbf z,\bm\sigma)$ using held-out goodness-of-fit and model selection, rather than assuming a lognormal law. The expected accessible-channel number during observation time $t_o$ is, schematically,
+\begin{equation}
+ N_\mathrm{access}(t_o)=\sum_{e\in\mathcal A}
+ \left(1-e^{-k_e t_o}\right),\qquad
+ \mathbb P(\Delta G_{\min}>g)=\big[1-F_{\Delta G}(g)\big]^{N_c},\label{eq:extreme}
+\end{equation}
+Equation~\eqref{eq:extreme} combines a sum of exponential-event probabilities derived from Eq.~\eqref{eq:escape} with the elementary independent-draw minimum distribution. It is the present diagnostic formulation, motivated by the extreme-barrier statistics in \cite{derlet2013,derlet2014}.
+where the order-statistic expression assumes $N_c$ independent draws and must be tested when barriers are correlated. A dimensionless driving competition is
+\begin{equation}
+ \mathrm{De}_a=\frac{\dot\gamma}{\gamma_* K_a},\label{eq:de}
+\end{equation}
+Equation~\eqref{eq:de} is a project-defined ratio of escape and driving times, using Eq.~\eqref{eq:kmc}; the thermal/driving competition is motivated by \cite{derlet2013}. No published universal threshold is asserted.
+with prescribed strain increment scale $\gamma_*$; $\mathrm{De}_a\ll1$ suggests ample local opportunity for activation and $\mathrm{De}_a\gg1$ rapid driving compared with current escape kinetics. This is an analysis diagnostic, not a universal constitutive criterion.
+
+\subsection{Event-resolved mesoscale stochastic elastoplasticity}
+Partition the domain into regions $\Omega_a$ with local state $(\bm\sigma_a,\bm\varepsilon^p_a,\mathbf z_a)$ and competing thermal and athermal triggers. The event-induced stress increment can be written in a linear-elastic reference regime as
+\begin{equation}
+ \delta\sigma_{ij}(\mathbf x)=\int_\Omega
+ \mathcal G_{ijkl}(\mathbf x,\mathbf y;\mathcal B)\,
+ \delta\varepsilon^p_{kl}(\mathbf y)\,\dd\mathbf y,\label{eq:green}
+\end{equation}
+Equation~\eqref{eq:green} uses the elastic propagator representation of a local plastic event; the quadrupolar two-dimensional far field and boundary effects follow \cite{picard2004}.
+where $\mathcal B$ denotes geometry and boundary conditions. An idealized two-dimensional shear kernel has a quadrupolar far-field structure $\delta\sigma_{xy}\propto\cos(4\theta)/r^2$; the actual tensor kernel and regularization are computed for the chosen problem. At each accepted transition,
+\begin{equation}
+ \bm\varepsilon^p_a\leftarrow\bm\varepsilon^p_a+\Delta\bm\varepsilon^p_e,\quad
+ \mathbf z_a\leftarrow\mathcal R(\mathbf z_a,e),\quad
+ \operatorname{div}\bm\sigma=\mathbf0,\quad
+ \{k_{be}\}\leftarrow\{k_{be}(\bm\sigma_b,T,\mathbf z_b)\}.\label{eq:renew}
+\end{equation}
+Equation~\eqref{eq:renew} is the proposed event-update algorithm, combining elastic redistribution \cite{picard2004} and state-dependent barrier information \cite{sway2016}; its renewal map must be measured.
+In the athermal limit, maintain fixed external displacement while repeating the mechanical equilibration--instability--renewal cycle until every region is stable. For event avalanche size $S$ and system scale $L$, test rather than impose
+\begin{equation}
+ P(S;L)\sim S^{-\tau}\,f\!\left(\frac{S}{S_c(L)}\right),\qquad S_c(L)\sim L^{d_f},\label{eq:avalanche}
+\end{equation}
+Equation~\eqref{eq:avalanche} is a finite-size scaling hypothesis of the type used for amorphous yielding \cite{lin2014}; its exponents are not prescribed for the present glass.
+with independent estimates and confidence intervals for $\tau,d_f$ and cutoff shape. Define localization diagnostics from accumulated activity $a(\mathbf x,t)$, correlation $C(r,\Delta t)$, band width $w(t)$ and persistence $\mathcal P$, retaining temporal ordering to distinguish cascades from coincident events.
+
+\subsection{STZ-inspired internal populations and rate-consistent continuum closure}
+In a deliberately coarse-grained alternative, $c_+$ and $c_-$ denote populations of two shear-biased orientations, with transitions $r_+(\bm\sigma,T,\chi)$ and $r_-(\bm\sigma,T,\chi)$, source/annihilation terms $\Gamma_\pm$ and disorder parameter $\chi$:
+\begin{align}
+ \dot c_+&=-r_-c_++r_+c_-+\Gamma_+, &
+ \dot c_-&=r_-c_+-r_+c_-+\Gamma_-,\label{eq:stzpop}\\
+ \dot{\bm\varepsilon}^{p}&=\frac{1}{V}\sum_e
+ k_e(\bm\sigma,T,\mathbf z)\,\mathbf M_e
+ \quad\longrightarrow\quad \mathcal F(\bm\sigma,T,\chi,c_+,c_-),\label{eq:plastflow}\\
+ \dot\chi&=\mathcal H(\bm\sigma:\dot{\bm\varepsilon}^{p},\chi,T)-
+ \mathcal A(\chi,T)+\operatorname{div}(D_\chi\nabla\chi).\label{eq:chi}
+\end{align}
+Equations~\eqref{eq:stzpop}--\eqref{eq:chi} are adapted model forms inspired by STZ population kinetics and configurational disorder \cite{falk1998,bouchbinder2007,falk2011}. The event-moment average in Eq.~\eqref{eq:plastflow} is the present rate-weighted construction; the functions $\Gamma_\pm,\mathcal F,\mathcal H,\mathcal A$ and spatial diffusivity remain proposed closures, not equations copied verbatim from these papers.
+The arrow in \eqref{eq:plastflow} indicates a \emph{proposed fitted closure}, not an identity. STZ population variables must be calibrated from rate-weighted mechanical transformations and cannot automatically be equated to all ARTn LSEs. Thermodynamic admissibility and frame invariance are enforced on the final closure.
+
+\subsection{Computational homogenization and mechanical scale bridging}
+Let $\Omega_m$ be a finite-deformation mesoscopic RVE, $\overline{\mathbf F}$ its imposed macroscopic deformation gradient and $\mathbf y(\mathbf X)=\overline{\mathbf F}\mathbf X+\widetilde{\mathbf w}(\mathbf X)$ the microscale mapping. With periodic fluctuation displacements and anti-periodic tractions, define
+\begin{equation}
+ \overline{\mathbf F}=\frac{1}{|\Omega_m|}\int_{\Omega_m}\mathbf F_m\,\dd V,
+ \qquad
+ \overline{\mathbf P}=\frac{1}{|\Omega_m|}\int_{\Omega_m}\mathbf P_m\,\dd V.\label{eq:averages}
+\end{equation}
+Equation~\eqref{eq:averages} uses the finite-strain volume averages of computational homogenization \cite{miehe1999,miehe2002a}.
+The finite-strain Hill--Mandel macrohomogeneity condition is
+\begin{equation}
+ \overline{\mathbf P}:\delta\overline{\mathbf F}
+ =\frac{1}{|\Omega_m|}\int_{\Omega_m}\mathbf P_m:\delta\mathbf F_m\,\dd V.\label{eq:HM}
+\end{equation}
+Equation~\eqref{eq:HM} is the finite-strain work-consistency condition as used in \cite{miehe1999,miehe2002a}; the following infinitesimal-strain identity is its small-strain form.
+For infinitesimal strain, $\overline{\bm\sigma}:\delta\overline{\bm\varepsilon}
+=\avg{\bm\sigma_m:\delta\bm\varepsilon_m}$. The macroscopic incremental energy follows a constrained microscopic minimum where an energetic constitutive representation exists:
+\begin{equation}
+ \overline\Pi_{n+1}(\overline{\mathbf F},\overline{\mathbf q})
+ =\frac{1}{|\Omega_m|}\inf_{\widetilde{\mathbf w},\mathbf q_m}
+ \int_{\Omega_m}\!\big[\psi_m(\mathbf F_m,\mathbf q_m)+
+ \mathcal D_m(\mathbf q_m,\mathbf q_m^{n})\big]\,\dd V.\label{eq:increment}
+\end{equation}
+Equation~\eqref{eq:increment} adapts incremental minimum principles from \cite{miehe2002a,miehe2002b}; the internal-variable constraints must be specified for the chosen material.
+Equation \eqref{eq:increment} is a variational model class, valid only if the selected kinetic or dissipative mechanism admits the prescribed incremental potential; stochastic kinetics may require an expectation/ensemble and additional rate or path-state variables. In smooth regimes,
+\begin{equation}
+ \overline{\mathbf P}=\frac{\partial\overline\Pi}{\partial\overline{\mathbf F}},\qquad
+ \overline{\mathbb A}=\frac{\dd\overline{\mathbf P}}{\dd\overline{\mathbf F}}.
+ \label{eq:tangent}
+\end{equation}
+Equation~\eqref{eq:tangent} gives the stress and tangent derivatives of the homogenized incremental potential \cite{miehe2002a,miehe2002b}.
+A discretized condensed RVE tangent illustrates the numerical transfer:
+\begin{equation}
+ \overline{\mathbb A}_{\mathrm{alg}}\simeq
+ \frac{1}{|\Omega_m|}\left(\mathbf K_{FF}
+ -\mathbf K_{Fw}\mathbf K_{ww}^{-1}\mathbf K_{wF}\right),\label{eq:schur}
+\end{equation}
+Equation~\eqref{eq:schur} is the symbolic static-condensation form of the homogenized algorithmic stiffness, following the finite-element homogenization strategy of \cite{miehe1999,miehe2002b}.
+with properly defined discrete deformation and internal fluctuation degrees of freedom. This symbolic Schur complement is not a stand-alone tensor formula independent of discretization. Test energetic closure by
+\begin{equation}
+ \mathcal D=\mathbf P:\dot{\mathbf F}-\dot\psi-\eta\dot T
+ -\frac{1}{T}\mathbf q\cdot\nabla T\ge0,\label{eq:CD}
+\end{equation}
+Equation~\eqref{eq:CD} is the reference-volume Clausius--Duhem inequality, obtained here by combining the energy balance with the entropy inequality, with $\psi,\eta$ and heat flux consistently referred to the reference configuration. Its isothermal specialization underlies the dissipative variational framework in \cite{miehe2002a}; the displayed thermal extension is not attributed as a verbatim equation from that paper.
+under a consistent free-energy, entropy and heat-flux convention; in isothermal mechanical runs the thermal terms are handled accordingly. Since elastic long-range interaction and avalanche tails may not converge with RVE size, measure normalized variance and correlation length before declaring a representative continuum volume:
+\begin{equation}
+ \mathcal I(L)=\frac{\operatorname{Var}[\avg{\Delta\varepsilon^p}_{\Omega_L}]}
+ {\mathbb E[\avg{\Delta\varepsilon^p}_{\Omega_L}]^2+\epsilon},\qquad
+ \ell_c=\frac{\int_0^\infty r\,|C(r)|\,\dd r}{\int_0^\infty |C(r)|\,\dd r}.\label{eq:indicators}
+\end{equation}
+Equation~\eqref{eq:indicators} defines project-specific relative-variance and integral-correlation diagnostics. They test the representativeness needed by homogenization \cite{miehe1999}; these exact diagnostic definitions are introduced here.
+Finite uncertainty and strong correlations trigger an enriched nonlocal or stochastic continuum strategy rather than unjustified deterministic averaging.
+
+\subsection{Finite-strain continuum plasticity and localization}
+Use $\mathbf F=\mathbf F^e\mathbf F^p$ with elastic energy $\psi_e(\mathbf C^e,T,\chi)$ and internal variables $\mathbf q=(\mathbf F^p,\chi,c_\pm,\ldots)$. An objective flow ansatz is
+\begin{equation}
+ \mathbf L^p=\dot{\mathbf F}^p(\mathbf F^p)^{-1}
+ =\sum_{e}\overline k_e\,\mathbf S_e^p\quad\text{or}\quad
+ \mathbf L^p=\mathcal L(\mathbf M,T,\mathbf q,\nabla\mathbf q),\label{eq:finiteflow}
+\end{equation}
+The multiplicative kinematics and Mandel-stress setting in Eq.~\eqref{eq:finiteflow} follow finite-plasticity homogenization \cite{miehe1999}; the channel-weighted plastic generators and function $\mathcal L$ are proposed extensions.
+with Mandel stress $\mathbf M=\mathbf C^e\mathbf S^e$ and plastic generators $\mathbf S_e^p$ chosen consistently with objectivity, volume change and measured event moments. A model of strain-localization onset may use the acoustic tensor
+\begin{equation}
+ \mathbf Q(\mathbf n)=\mathbf n\cdot\mathbb C_{\mathrm{alg}}\cdot\mathbf n,
+ \qquad\min_{\|\mathbf n\|=1}\det\mathbf Q(\mathbf n)\to0,\label{eq:acoustic}
+\end{equation}
+Equation~\eqref{eq:acoustic} expresses the acoustic-tensor singularity criterion for localization, following \cite{rudnicki1975}; finite-deformation use requires the appropriate spatial tangent and stress contributions.
+where loss of strong ellipticity is only one diagnostic, supplemented by finite-size nonlocal simulations, perturbation amplification and shear-band persistence. Nonlocal length $\ell$ is independently tied to mesoscale correlation data or measured band width, not merely tuned for finite-element mesh independence.
+
+\paragraph{Distributed and embedded representations of a shear band.}
+For band initiation and finite-width localization, a gradient-extended formulation following Miehe \cite{miehegradient2014} is a candidate structure for the internal-variable evolution in Eq.~\eqref{eq:finiteflow}. Its gradient contribution, microstructural boundary conditions and length parameter must be specified and calibrated for the chosen amorphous material. The relaxed laminate microshearing of Miehe and Lambrecht \cite{miehe2003band} supplies an alternative treatment of non-convex incremental response; it is not itself an identification of an STZ population. When specimen-scale band propagation makes distributed resolution impractical, the embedded weak-discontinuity tracking of Jin et al.\ \cite{jinlinder2019} provides a candidate numerical alternative. For mature bands represented by effective slip surfaces, the multilevel and non-planar strong-discontinuity methods of Linder and coauthors provide further options \cite{linderraina2013,linderzhang2013}. Any transfer between distributed and embedded descriptions will require consistency of traction, slip and dissipated work; it is a proposed development, not an established coupling from those papers.
+
+
+The conceptual distinction between distributed plastic localization and a separately resolved fracture field is illustrated in Figs.~\ref{fig:fig_10_shear_band} and~\ref{fig:fig_12_phase_field_scalar}. These refined schematics support the proposed modelling sequence; the published methods cited above remain methodological precedents rather than a calibrated metallic-glass constitutive law.
+
+\subsection{Damage and fracture: a separate mechanism}
+The silica-glass fracture study by Shekh Alshabab, Markert and \underline{Bamer} examines criticality using molecular mechanics \cite{bamercritical2024}. It motivates statistical analysis of failure sequences in the validation plan, while the separation mechanism and fracture parameters for metallic glasses require their own evidence.
+
+Miehe, Aldakheel and Raina's finite-strain plasticity--damage theory provides a variational precedent for coupling plastic deformation and fracture while distinguishing their regularization lengths \cite{mieheductile2016}. Here, adopting an amorphous-plasticity law and its coupling to damage remains a project-specific constitutive development. A phase-field variable $d\in[0,1]$ represents loss of cohesion, with a candidate free-energy functional
+\begin{equation}
+ \mathcal E(\mathbf u,d,\mathbf q)=\int_\Omega\!
+ \left[g(d)\psi_e^+(\mathbf F^e,\chi)+\psi_e^-(\mathbf F^e,\chi)
+ +\psi_{\mathrm{hard}}(\mathbf q)
+ +\frac{G_c(\mathbf q,T)}{2}\left(\frac{d^2}{\ell_d}+\ell_d|\nabla d|^2\right)\right]\dd V
+ -W_{\mathrm{ext}},\label{eq:phase}
+\end{equation}
+Equation~\eqref{eq:phase} adapts the quadratic crack-density regularization and tension/compression split of \cite{miehe2010}. Its finite-strain plasticity coupling and state-dependent $G_c$ are proposed extensions requiring independent calibration.
+where $g(d)=(1-d)^2+\kappa$ is a candidate degradation law, $\psi_e^\pm$ a declared tensile/compressive energy split, and $G_c$ an independently characterized fracture energy. The fracture evolution is solved by an incremental minimization
+\begin{equation}
+ (\mathbf u_{n+1},d_{n+1},\mathbf q_{n+1})
+ \in\operatorname*{argmin}_{d\ge d_n,\,0\le d\le1}
+ \left\{\mathcal E(\mathbf u,d,\mathbf q)+\mathcal D_{n\to n+1}(\mathbf q)\right\},\label{eq:phaseinc}
+\end{equation}
+Equation~\eqref{eq:phaseinc} is the constrained incremental variational form inspired by \cite{miehe2010,miehe2002a}; the coupled plastic dissipation is an additional modeling choice.
+when a potential-based evolution is justified. This extension requires an actual separation mechanism (e.g., cavitation or decohesion) and independent calibration of initiation, toughness and crack paths. We will not equate a plastic shear-band contour with a crack and will benchmark fracture models against mechanisms supported by the selected metallic glass.
+
+Figure~\ref{fig:flow} summarizes the two independent microscopic arms: ARTn provides finite-temperature candidate barriers and rates while AQS finds zero-temperature load-driven instability thresholds. They feed a shared event-interaction description; continuum plasticity follows only after scale-transfer checks, and fracture requires independently supported cohesive degradation.
+\begin{figure}[p]\centering
+\input{flowchart.tex}
+\caption{Research flow in the red/blue energy-landscape colour convention of thesis Fig.~1.4 \cite{swaythesis}: red denotes activated barrier exploration and blue denotes relaxation/collective response. Neutral grey boxes contain shared operations; colour does not equate AQS instability to thermal activation. The complete editable TikZ source is supplied in \texttt{flowchart.tex}.}\label{fig:flow}
+\end{figure}
+\clearpage
+
+\section{Explicit information-transfer audit and proposed scientific novelty}
+\label{sec:transferaudit}
+The following three coloured flowcharts distinguish \textcolor{teal}{retained and represented information}, \textcolor{navy}{mapping operations}, and \textcolor{red}{fine-scale information not explicitly passed}. They constitute a proposed \emph{information audit}, not a claim that the three published frameworks already form a calibrated, closed multiscale constitutive model. A quantity may survive as a marginal distribution, a fitted coefficient or an internal RVE field without appearing as an independently observable continuum field. Figure schematics depict conceptual transfers, not measured parameter values.
+
+\subsection{Atomistic to mesoscale I: Derlet--Maa\ss{} activation-statistics bridge}
+\textbf{Information transferred.} ARTn and atomistic transition exploration supply candidate initial basins, transition-state barriers $\Delta E_i^\ddagger$, stress sensitivity or activation volumes (when computed), metastable-state energy differences, temperatures, and--after suitable physical calibration--attempt-rate prefactors. Counts of \emph{unique physically accessible channels}, including the low-barrier tail and state-conditioned multiplicity, become barrier-population descriptors, kinetic escape propensities and predictions of observation-time-dependent freezing \cite{derlet2011,derlet2013,derlet2014,derletmicro2021}. Effective elastic response and distributions of plastic transformation eigenstrain may additionally be extracted and supplied to the \emph{proposed spatial elastoplastic extension}; they are not automatic outputs of the original analytical barrier-statistics model.
+
+\textbf{How the bridge operates.} Enumerate physically distinct saddles, validate network connectivity and correct for biased saddle-discovery frequency; condition a joint event catalogue on preparation, stress and thermal state. Calculate $k_i(T,\sigma)=\nu_i\exp[-\Delta G_i^\ddagger(\sigma,T)/(k_{\mathrm B}T)]$ where thermally activated rate theory is valid, $K=\sum_i k_i$, and $\Pr(i\mid\mathrm{event})=k_i/K$. Propagate an event through a state-dependent continuous-time stochastic process and update local barrier and structural distributions after renewal. Compare predicted yielding and kinetic crossover over a prespecified time-temperature-loading grid. Distinguish catalogue sampling probabilities from actual transition probabilities.
+
+\textbf{Information not explicitly passed.} Atomic coordinates and chemical neighbourhoods, individual saddle trajectories and displacement-string geometries, full vibrational spectra, detailed long-range spatial connectivity and higher-order correlations among every event generally disappear on reduction to marginal barrier distributions. Local eigenstrains, spatial stress redistribution and renewal dynamics require deliberate additional fields and closure assumptions; absence from the original formulation is not a proof they are physically irrelevant.
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{figures/scale_bridging/derlet_maass_transfer_flowchart.png}
+\caption{Derlet--Maa\ss{}: thermally activated atomistic-to-mesoscale information mapping. Green: retained/coarse-grained outcome; red: not explicitly resolved; the proposed spatial extension requires additional constitutive assumptions.}\label{fig:bridge_derlet}
+\end{figure}
+\FloatBarrier
+
+\subsection{Atomistic to mesoscale II: Bamer diagnostics and Falk--Langer STZ kinetics}
+\textbf{Information transferred.} AQS and atomistic calculations quantify instability stresses and strains, local nonaffine displacements (including $D^2_{\min}$), transformation-site and orientation statistics, event plastic eigenstrains, stress drops and elastic redistribution patterns. These can inform local STZ densities, directional biases and switching thresholds, effective elastic moduli, stochastic event strengths and plastic strain-rate response \cite{bamer2023,falk1998,bouchbinder2007,falk2011}. Event-to-event correlations and avalanche sizes can constrain a \emph{spatial} elastoplastic extension. For metallic glasses, atomistic calibration must be performed directly; previously investigated network/oxide-glass predictors are methodological analogues, not transferable material parameters \cite{bamer2026}.
+
+\textbf{How the bridge operates.} Refine AQS strain increments to locate first mechanical loss of stability, distinguish initial instability from the subsequent fixed-strain avalanche, and classify irreversible event cores with orientation, eigenstrain and pressure sensitivity. Infer conditional event distributions and a mesoscale elastic propagator, then calibrate Falk--Langer-type oriented STZ population evolution (e.g., $c_\pm$), transition-rate functions and structural disorder state $\chi$ against independent finite-temperature and mechanical tests. AQS provides \emph{athermal thresholds}, not finite-temperature Arrhenius waiting times; connecting the two requires separately measured activation barriers or thermal calibration.
+
+\textbf{Information not explicitly passed.} Atom-by-atom paths and chemistry, exact transformation-core topology, individual near-field relaxation fields, the entire three-dimensional distribution of local orientations, full saddle and vibrational information, and complete space--time avalanche histories do not survive in a small set of STZ population variables. Correlation lengths, long-range propagation and spatially persistent shear bands will only survive when a spatial nonlocal, gradient or RVE-resolved model explicitly represents them.
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{figures/scale_bridging/falk_langer_bamer_transfer_flowchart.png}
+\caption{Bamer atomistic AQS diagnostics mapped to proposed spatial STZ-based mesoscale descriptions, using Falk--Langer population kinetics as a distinct constitutive ingredient. Thermal kinetics cannot be inferred from AQS thresholds alone.}\label{fig:bridge_falk}
+\end{figure}
+\FloatBarrier
+
+\subsection{Mesoscale to continuum III: Miehe homogenization and Linder localization representation}
+\textbf{Information transferred.} Representative mesoscale boundary-value problems deliver averaged kinematics and work-conjugate stress ($\overline{\mathbf F}$, $\overline{\mathbf P}$), elastic and algorithmic tangents, incremental stored energy and dissipation, and selected evolving inelastic internal variables. Localization orientation, softened tangent moduli, fluctuation statistics and spatial correlation lengths can supply additional gradient/nonlocal constitutive information \emph{if identified}. Linder-type embedded discontinuities can represent band or failure-surface geometry; their trajectories and strengths must be independently determined. Crack initiation, cohesive degradation and fracture energy require an \emph{additional} physical damage law rather than following automatically from homogenized plasticity \cite{miehe1999,miehe2002a,miehe2002b,miehelambrecht2003,miehegradient2014,jinlinder2019,linderraina2013,mieheductile2016}.
+
+\textbf{How the bridge operates.} Apply prescribed macroscopic deformation histories to mesoscale RVEs with suitable kinematic/traction/periodic boundary constraints; solve local equilibrium and incremental constitutive evolution; average forces and energy to obtain effective stresses, potentials and consistent tangents. Enforce Hill--Mandel work consistency, $\overline{\mathbf P}:\dot{\overline{\mathbf F}}=\langle\mathbf P:\dot{\mathbf F}\rangle$, before transferring the response to finite elements. Check RVE-size convergence, mesh objectivity, localization and competing boundary conditions. Compare local-gradient and embedded-discontinuity strategies; calibrate actual decohesion independently.
+
+\textbf{Information not explicitly passed.} Individual mesoscale event IDs and waiting times, full barrier distributions and avalanche ordering, all local stress/strain fluctuations, exact microstructural connectivity, and every possible shear-band path are generally absent from a reduced continuum state. In FE$^2$, some of these fine fields may remain \emph{stored within RVEs}, but are not resolved as independent global fields. Work consistency does not guarantee conservation of every fluctuation, a physical band width, or a fracture law.
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{figures/scale_bridging/linder_miehe_transfer_flowchart.png}
+\caption{Miehe computational homogenization and Linder-inspired localization: retained continuum energetic and constitutive response versus stochastic mesoscale information absent unless extra fields and failure calibrations are introduced.}\label{fig:bridge_miehe}
+\end{figure}
+\FloatBarrier
+
+\clearpage
+\subsection{Cross-approach comparison: what survives the bridges?}
+\begin{table}[H]
+\caption{Comparison of principal information channels. ``Conditional'' denotes an extension, additional calibration or retained RVE field rather than an intrinsic output of the cited base method.}\label{tab:bridge_comparison}
+\centering\scriptsize
+\renewcommand{\arraystretch}{1.20}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{.23\textwidth} *{3}{>{\raggedright\arraybackslash}X}}
+\toprule
+\textbf{Information} & \textbf{Derlet--Maa\ss{}} & \textbf{Falk--Langer--Bamer} & \textbf{Linder--Miehe}\\
+\midrule
+Activation barriers and thermal escape & Central: distributions, rate weighting & Conditional thermal-rate calibration; AQS alone insufficient & Normally not explicit \\
+Mechanical instability thresholds & Stress-conditioned barriers; distinct from AQS & Central AQS diagnostic & Reflected indirectly in effective response \\
+Atomic geometry and chemistry & Compressed into event statistics & Used to identify event cores, then compressed & Not a global state variable \\
+STZ orientation and populations & Not central & Central in oriented population closure & Conditional selected internal variables \\
+Nonaffine displacement and eigenstrain & Conditional event eigenstrain transfer & Central diagnostics; eigenstrain statistics & Averaged inelastic deformation \\
+Elastic interactions and stress redistribution & Requires spatial extension & Spatial propagator needed for cascades & Encoded via solved RVE and effective tangent \\
+Avalanche spatial and temporal correlations & Not generally retained & Conditional spatial collective model & Not explicit without enriched state \\
+Structural memory / preparation & State-conditioned barrier renewal & STZ bias, disorder state $\chi$ & Selected homogenized history variables \\
+Plastic stress, strain and dissipation & Statistical constitutive prediction & Mesoscopic plastic flow & Central energetic/mechanical output \\
+Shear-band width and path & Not directly determined & Emergent only with spatial resolution & Conditional gradient/discontinuity representation \\
+Cohesive fracture and separation & Not supplied & Not automatic from STZ plasticity & Separate damage/cohesive law required \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\FloatBarrier
+
+\subsection{Expected methodological novelties and falsifiable outcomes}
+These are \textbf{proposed advances to test}, not results already established by the referenced authors:
+\begin{enumerate}[leftmargin=*,itemsep=3pt]
+\item \textbf{An auditable, information-aware transfer operator.} Record for each interface which distributions, cross-correlations, state variables and uncertainty intervals are retained, fitted, approximated or dropped; quantify the impact using held-out response predictions and targeted ``add-back'' tests of excluded descriptors.
+\item \textbf{A unified yet regime-aware event catalogue.} Pair ARTn pathways with load-conditioned AQS instabilities while preserving the distinction between thermal transition hazards and deterministic load-induced loss of stability. Test kinetic crossover against temperature, stress and observation time without equating barrier height to instability threshold.
+\item \textbf{Joint event statistics rather than means alone.} Transfer conditional distributions $p(\Delta G^\ddagger,\boldsymbol\epsilon^{p},\Omega,\mathbf z\mid\boldsymbol\sigma,T)$ including cross-correlations among activation energy, plastic eigenstrain, orientation and structural state. Determine whether these improve rate sensitivity, stress-drop tails and shear-band onset compared with independently fitted marginals.
+\item \textbf{Correlation-aware stochastic elastoplasticity.} Calibrate regional stress kernels, channel renewal and finite-size avalanche statistics using the same reference ensembles; identify the shortest spatial descriptor set needed to reproduce clustering and the development of persistent bands under changing boundary conditions.
+\item \textbf{Error-budgeted, energy-consistent meso-to-continuum closure.} Use Hill--Mandel checks, representative-volume convergence, tangent validation and out-of-sample load paths to isolate errors introduced by event compression, finite sampling, nonlocal regularization and continuum discretization.
+\item \textbf{A strict shear-band/fracture separation.} Predict plastic localization first, and require separate cohesive or damage calibration for true decohesion. Evaluate whether the same mesoscopic state variables can explain both phenomena, or whether an additional fracture-driving state is essential.
+\item \textbf{An adaptive criterion for when homogenization fails.} Establish an operational indicator based on RVE sensitivity, correlation length relative to continuum resolution and the change in predicted responses under descriptor deletion. Where this indicator fails, retain enriched fields or nested RVEs rather than forcing an unqualified local constitutive fit.
+\end{enumerate}
+\textbf{Expected deliverables and verification.} Publish an event-descriptor dictionary with units and uncertainty; a versioned interface specification for atomistic-to-mesoscale and mesoscale-to-continuum exchange; paired thermal/AQS and RVE benchmark sets; quantitative acceptance tests for activation rates, plasticity, avalanche cutoffs, work consistency and mesh objectivity; and a documented negative-results record identifying nontransferable predictors. Improvements over independent-marginal or purely local baselines are hypotheses to validate, not assumed performance gains.
+\FloatBarrier
+
+\section{Work packages, methods and research milestones}
+\subsection{WP1: Reference metallic-glass states and atomistic event network (M1--M12)}
+\textbf{Goal.} Develop reproducible reference ensembles and assess completeness, uniqueness and connectivity of ARTn event catalogues. \textbf{Tasks.} (1.1) Generate initial metallic-glass structures with varying quench rate, size and composition, including three-dimensional cases and reference AQS responses. (1.2) Run multiple independent ARTn searches per state and verify saddle-to-minimum connectivity, forward/reverse pathways and representative elastic accommodation fields. (1.3) Determine barrier distributions and transformation moments; quantify state-to-state and sample-to-sample uncertainty. (1.4) Validate selected barriers against controlled deformation or NEB calculations. \textbf{Outputs.} Documented reference dataset; event-catalogue schema; convergence and sensitivity reports. \textbf{Milestones.} M6: basic benchmark ensembles; M12: catalogue with error bars, connectivity and state-dependence. \textbf{Fallback.} Restrict expensive full searches to stratified microenvironment classes and benchmark extrapolations against untouched local environments, explicitly tracking missed-channel uncertainty.
+
+\subsection{WP2: Kinetics, thermal/athermal crossover and transfer (M8--M20)}
+\textbf{Goal.} Transfer rates without replacing distinct pathways by a fictitious mean barrier. \textbf{Tasks.} (2.1) Evaluate physically motivated prefactors or bound their uncertainty, estimate free-energy corrections where feasible and consistently test reverse rates. (2.2) Build a conditional continuous-time transition model using Eqs.~\eqref{eq:rate}--\eqref{eq:kmc}. (2.3) Measure barrier-tail sensitivity, order statistics, finite-time kinetic freezing and state-dependent rates. (2.4) Build a separate AQS instability branch and map where both regimes predict similar event morphologies but different waiting-time physics. \textbf{Outputs.} Validated rate-based event selector with uncertainty propagation and an activation-versus-instability regime diagram. \textbf{Milestones.} M14: rate-preserving baseline; M20: tested crossover and state-renewal rules. \textbf{Fallback.} If prefactors cannot be uniquely identified, propagate experimentally plausible or calculated intervals and report only predictions robust across them.
+
+\subsection{WP3: Interacting plastic events, avalanches and shear bands (M15--M27)}
+\textbf{Goal.} Explain when isolated transformations become collective and spatially persistent. \textbf{Tasks.} (3.1) Couple regions through boundary-condition-consistent Eshelby or finite-element Green operators and verify energy/stress redistribution. (3.2) Compare finite-temperature kMC to fixed-load AQS cascades. (3.3) Measure avalanche-size and duration distributions, finite-size cutoffs, spatial correlation functions, band width, orientation and persistence. (3.4) Test competing structural renewal, age/rejuvenation and thermal feedback mechanisms while separately recording heat generation and any temperature evolution. \textbf{Outputs.} Stochastic elastoplastic benchmark with region-level kinetics, cascade statistics and an independently checked localization diagram. \textbf{Milestones.} M21: event-interaction benchmark; M27: convergence-aware localization results. \textbf{Fallback.} Use smaller 3D domains or quasi-2D methodological domains to isolate mechanisms; do not generalize quantitative 2D exponents to bulk 3D glasses.
+
+\subsection{WP4: Work-consistent homogenization and continuum plasticity--fracture (M21--M33)}
+\textbf{Goal.} Determine when mesoscopic response admits a deterministic continuum closure and when stochastic or nonlocal fields must be retained. \textbf{Tasks.} (4.1) Solve representative mesoscale RVEs under periodic and alternative physically meaningful boundary conditions. Verify Hill--Mandel work, energy balance and volume convergence. (4.2) Identify tangent operators and internal-state evolution using incremental variational and/or explicit rate-dependent schemes with thermodynamic checks. (4.3) Implement and compare distributed gradient localization \cite{miehegradient2014} and, where appropriate, embedded-band tracking \cite{jinlinder2019,linderraina2013,linderzhang2013}, with mesh/objectivity verification and explicit checks on dissipated work. (4.4) Introduce a \emph{separate}, mechanically grounded phase-field damage law using finite-strain plasticity--damage coupling as a methodological precedent \cite{mieheductile2016}, calibrating fracture characteristics independently. (4.5) Compare deterministic, stochastic and nonlocal closures at the same held-out conditions. \textbf{Outputs.} FE constitutive interface; uncertainty-aware homogenization tests; independently validated fracture extension. \textbf{Milestones.} M27: micro--macro mechanics checks; M33: continuum and damage demonstrations. \textbf{Fallback.} If no representative volume exists for an observable, use explicitly stochastic/nonlocal fields and report an operational validity domain instead of forcing conventional FE$^2$ closure.
+
+\subsection{WP5: Independent validation, reproducibility and dissemination (M27--M36)}
+\textbf{Goal.} Validate each cross-scale transfer on observables not used to calibrate it. \textbf{Tasks.} (5.1) Establish hold-out initial glass states and loading protocols. (5.2) Quantify barriers, event fractions, waiting-time distributions, shear-rate/temperature response, stress drops, avalanche statistics, band morphology, initiation toughness and crack path using scale-appropriate comparisons. (5.3) Perform size/mesh/step convergence, parameter sensitivity, structural uncertainty and identifiability checks. (5.4) Publish reusable scripts, figure provenance and appropriately licensed datasets. \textbf{Outputs.} Benchmark repository; independent model comparison; final domain-of-validity map; publications and dissemination. \textbf{Milestones.} M30: locked testing plan; M36: validated reproducible pipeline and report.
+
+Figure~\ref{fig:research_timetable} connects the documented research-plan foundations to the overlapping project tasks, with atomistic cataloguing feeding kinetic transfer before mesoscale and continuum integration. 
+\begin{figure}[p]
+\centering
+\input{gantt_chart.tex}
+\caption{Research timetable adapted from the grid-style time plan in \underline{Swayamjyoti}'s research plan \cite{swayplan}. Red cells in the separate ``Prior'' column denote documented historical foundations; green cells denote proposed work during the 36-month project. Blank cells denote no scheduled activity. Quarter columns show the three-month interval ending at the labelled month; boundary tasks beginning at M8, M20, etc. occupy the intersecting quarter. Prior work is not counted as completed project work.}\label{fig:research_timetable}
+\end{figure}
+Fig.~\ref{fig:research_timetable} define the project schedule.
+\subsection{Cross-work-package interfaces and deliverables}
+\begin{table}[h]\centering\small
+\caption{Transfer interfaces and measurable checks; no parameter may be fixed solely to reproduce the final stress--strain curve.}
+\begin{tabularx}{\textwidth}{p{2cm}X X}\toprule Interface&Transferred quantities&Independent validation\\\midrule
+WP1$\to$WP2&$\Delta G^\ddagger,\nu_e$, reversibility, $\mathbf M_e$, basin/transition graph&Rediscovery completeness; path and rate consistency\\
+WP2$\to$WP3&Conditional $k_e$, instability thresholds, renewal functions&Waiting times, event moments, temperature/rate trends\\
+WP3$\to$WP4&Mesoscale stress response, correlations, fluctuation statistics&Hill--Mandel work, RVE tests, band statistics\\
+WP4$\to$WP5&Constitutive tangents, internal lengths, independent $G_c$&Mesh/size convergence, band onset, crack initiation/path\\\bottomrule
+\end{tabularx}
+\end{table}
+\FloatBarrier
+\FloatBarrier
+\subsection{Risk management and decision gates}
+\textbf{Gate A (M12):} If catalogue low-barrier probabilities are not stable under independent searches, enlarge sampling and report model-dependent bounds before using physical kMC. \textbf{Gate B (M20):} If kinetics cannot be parameterized across preparation states, introduce explicit state classes and avoid a universal distribution. \textbf{Gate C (M27):} If representative-volume stress or localization statistics fail to converge, retain nonlocal/event-resolved stochastic fields. \textbf{Gate D (M33):} If fracture cannot be calibrated independently, report valid plasticity/localization predictions and restrict the phase-field extension to methodological proof of concept.
+
+\section{Validation strategy and quantitative success criteria}
+Success is defined by verified mechanistic and numerical transfer, \emph{not} simply good global stress--strain fits. Before production runs, register model forms, metrics, split of calibration/validation ensembles and uncertainty treatment. For a measured observable $y_i$ and prediction $\widehat y_i$, a generic normalized validation metric is
+\begin{equation}
+ \mathcal E_y=\left[\frac{1}{N_v}\sum_{i=1}^{N_v}
+ \frac{(\widehat y_i-y_i)^2}{s_i^2+\epsilon}\right]^{1/2},\label{eq:validation}
+\end{equation}
+where $s_i$ is declared observation or ensemble uncertainty rather than an adjustable fitting constant. Report confidence intervals from independently prepared glass realizations, not merely correlated simulation frames. Quantify (i) fraction of newly discovered paths under additional sampling, (ii) forward/reverse transition consistency, (iii) rate and waiting-time calibration, (iv) stress-equilibration and energy residuals, (v) avalanche exponent \emph{and} cutoff identifiability, (vi) band temporal persistence, (vii) RVE/boundary-condition effects, and (viii) fracture-initiation and crack-path predictivity. Decomposition of predictive errors into sampling, physical-model and numerical contributions will be documented.
+
+\section{Research environment, collaboration and resources}
+\subsection{Applicant background and research philosophy}
+\underline{S. Swayamjyoti} completed his master's thesis, \emph{Finite Element Implementation of Orbital-Free Density Functional Theory for Electronic Structure Calculations}, at the University of Stuttgart in April 2012, under the supervision of Junior Professor Christian Linder and Volker Schauer \cite{swaymaster2012}. At that time, Linder was associated with SimTech and the Institute of Applied Mechanics (Chair I), which was headed by Christian Miehe. \underline{Swayamjyoti} worked as a research student at this institute from 2010 to 2012 and explicitly acknowledges scientific discussions with Linder. His research philosophy was influenced by both Linder and Miehe during this period.
+
+This formative background provides personal context for the proposed connection between atomistic electronic-structure and glass simulations, finite-element implementation, and continuum mechanics. It complements the methodological discussion of Miehe's variational homogenization and localization formulations and Linder's micromechanically informed continuum modeling in Section~1.1.
+
+\paragraph{Complementary computational experience.}
+\underline{Swayamjyoti}'s computational work also includes molecular-dynamics modeling of salt diffusion in a phosphazene-based polymer electrolyte \cite{swaypolymer2024} and machine-learning classification, demonstrating experience in data-driven modeling \cite{swayclassify2020}. His visual machine-learning paper on 2D particulate structures and the related extension to 3D spatial networks likewise demonstrate experience in data-driven structural analysis and unsupervised learning \cite{swayvisual2022,swaymodularity2020}. Finite-element-based design and deep-learning optimization of piezoelectric energy harvesters provide a further computational-mechanics example \cite{swayharvester2022}. These document broader molecular-simulation, finite-element and data-analysis experience. Joint work with \underline{Bamer} on numerical FROG reconstruction in multi-frequency Raman generation is available as a preprint \cite{bamerswayfrog2026}. This paper was coauthored with Prof. Donna Strickland, a 2018 Nobel Laureate in Physics, and arose from a project led by \underline{Swayamjyoti} as the sole principal investigator; he is also the corresponding author of the FROG paper. Its role here is evidence of a shared computational contribution outside glass mechanics, rather than validation of the proposed glass model. The materials-modeling book chapter \cite{swaychapter2020} provides additional context for representation and algorithm choices.
+
+\section{Expected results and scientific impact}
+The project will produce calibrated channel-resolved transition networks, explicit thermal/athermal regime boundaries, stochastic elastoplastic models with predictable collective response, and a continuum closure checked for work consistency and thermodynamic plausibility. Most importantly, it will specify the \emph{limits} of each coarse-graining operation. By separately establishing the onset of persistent shear localization and the additional failure mechanisms needed for material separation, the proposal avoids a common conceptual shortcut in metallic-glass modeling. Generalizable outputs are the validated methodology, uncertainty accounting and computational interfaces; actual metallic-glass parameters, exponents and fracture trends remain hypotheses until independently tested.
+
+
+
+\begin{thebibliography}{99}\small
+\bibitem{swayplan} \underline{S. Swayamjyoti}, \emph{Microscopic structural excitations within model bulk metallic glass systems}, supplied research plan, PSI Villigen and ETH Zurich, 13 pp. Historical 42-month thesis programme; especially Sections 3--5 and Table 1.
+\bibitem{bamer2023} \underline{F. Bamer}, F. Ebrahem, B. Markert et al., ``Molecular Mechanics of Disordered Solids,'' \emph{Archives of Computational Methods in Engineering} \textbf{30}, 2105--2180 (2023). doi:10.1007/s11831-022-09861-1.
+\bibitem{bamer2026} \underline{F. Bamer}, Z. Wu, S. S. Alshabab, M. Reihn and B. Stamm, ``Geometrical fingerprints of shear transformation zones in network glasses,'' \emph{Communications Materials} \textbf{7}, 20 (2026), published online December 2025. doi:10.1038/s43246-025-01034-4. \emph{Network/oxide glasses; transfer to metallic glasses is proposed, not established.}
+\bibitem{miehelambrecht2003} C. Miehe and M. Lambrecht, ``A two-scale finite element relaxation analysis of shear bands in non-convex inelastic solids: small-strain theory for standard dissipative materials,'' \emph{Computer Methods in Applied Mechanics and Engineering} \textbf{192}, 473--508 (2003). doi:10.1016/S0045-7825(02)00547-9.
+\bibitem{miehe2003band} C. Miehe and M. Lambrecht, ``Analysis of microstructure development in shearbands by energy relaxation of incremental stress potentials: Large-strain theory for standard dissipative solids,'' \emph{International Journal for Numerical Methods in Engineering} \textbf{58}, 1--41 (2003). doi:10.1002/nme.726.
+\bibitem{lindermiehe2011} C. Linder, M. Tkachuk and C. Miehe, ``A micromechanically motivated diffusion-based transient network model and its incorporation into finite rubber viscoelasticity,'' \emph{Journal of the Mechanics and Physics of Solids} \textbf{59}, 2134--2156 (2011). doi:10.1016/j.jmps.2011.05.005. \emph{Rubber, not metallic glass.}
+\bibitem{glushko2024} O. Glushko, R. Pippan, D. \c{S}opu, C. Mitterer and J. Eckert, ``How to catch a shear band and explain plasticity of metallic glasses with continuum mechanics,'' \emph{Nature Communications} \textbf{15}, 5601 (2024). doi:10.1038/s41467-024-49829-2.
+
+\bibitem{barkema1996} G. T. Barkema and N. Mousseau, ``Event-based relaxation of continuous disordered systems,'' \emph{Phys. Rev. Lett.} \textbf{77}, 4358 (1996).
+\bibitem{mousseau1998} N. Mousseau and G. T. Barkema, ``Traveling through potential energy landscapes of disordered materials: The activation-relaxation technique,'' \emph{Phys. Rev. E} \textbf{57}, 2419 (1998).
+\bibitem{mousseau2012} N. Mousseau et al., ``The activation-relaxation technique: ART nouveau and kinetic ART,'' \emph{J. At. Mol. Phys.} \textbf{2012}, 925278 (2012).
+\bibitem{sway2014} \underline{S. Swayamjyoti}, J. F. L\"offler and P. M. Derlet, ``Local structural excitations in model glasses,'' \emph{Phys. Rev. B} \textbf{89}, 224201 (2014).
+\bibitem{sway2016} \underline{S. Swayamjyoti}, J. F. L\"offler and P. M. Derlet, ``Local structural excitations in model glass systems under applied load,'' \emph{Phys. Rev. B} \textbf{93}, 144202 (2016).
+\bibitem{derlet2011} P. M. Derlet and R. Maa\ss{}, ``Thermal-activation model for freezing and the elastic robustness of bulk metallic glasses,'' \emph{Phys. Rev. B} \textbf{84}, 220201 (2011).
+\bibitem{derlet2013} P. M. Derlet and R. Maa\ss{}, ``Linking high- and low-temperature plasticity in bulk metallic glasses: Thermal activation, extreme value statistics and kinetic freezing,'' \emph{Philos. Mag.} \textbf{93}, 4232 (2013).
+\bibitem{derlet2014} P. M. Derlet and R. Maa\ss{}, ``Linking high- and low-temperature plasticity in bulk metallic glasses II,'' \emph{Philos. Mag.} \textbf{94}, 2776 (2014).
+\bibitem{falk1998} M. L. Falk and J. S. Langer, ``Dynamics of viscoplastic deformation in amorphous solids,'' \emph{Phys. Rev. E} \textbf{57}, 7192 (1998).
+\bibitem{bouchbinder2007} E. Bouchbinder, J. S. Langer and I. Procaccia, ``Athermal shear-transformation-zone theory of amorphous plastic deformation. I,'' \emph{Phys. Rev. E} \textbf{75}, 036107 (2007).
+\bibitem{falk2011} M. L. Falk and J. S. Langer, ``Deformation and failure of amorphous, solidlike materials,'' \emph{Annu. Rev. Condens. Matter Phys.} \textbf{2}, 353 (2011).
+\bibitem{miehe1999} C. Miehe, J. Schr\"oder and J. Schotte, ``Computational homogenization analysis in finite plasticity,'' \emph{Comput. Methods Appl. Mech. Eng.} \textbf{171}, 387--418 (1999).
+\bibitem{miehe2002a} C. Miehe, J. Schotte and M. Lambrecht, ``Homogenization of inelastic solid materials at finite strains based on incremental minimization principles,'' \emph{J. Mech. Phys. Solids} \textbf{50}, 2123--2167 (2002).
+\bibitem{miehe2002b} C. Miehe, ``Strain-driven homogenization of inelastic microstructures and composites based on an incremental variational formulation,'' \emph{Int. J. Numer. Methods Eng.} \textbf{55}, 1285--1322 (2002).
+\bibitem{miehe2010} C. Miehe, M. Hofacker and F. Welschinger, ``A phase field model for rate-independent crack propagation: Robust algorithmic implementation based on operator splits,'' \emph{Comput. Methods Appl. Mech. Eng.} \textbf{199}, 2765--2778 (2010).
+\bibitem{linder2023} P. Arunachala, S. Vajari, M. Neuner and C. Linder, ``A multiscale phase field fracture approach based on the non-affine microsphere model for rubber-like materials,'' \emph{Comput. Methods Appl. Mech. Eng.} \textbf{410}, 115982 (2023). \emph{Methodological analogue only.}
+\bibitem{swaymaster2012} \underline{S. Swayamjyoti}, \emph{Finite Element Implementation of Orbital-Free Density Functional Theory for Electronic Structure Calculations}, master's thesis, University of Stuttgart (April 2012). Supervisors: Junior Professor Christian Linder and Volker Schauer.
+\bibitem{swaythesis} \underline{S. Swayamjyoti}, \emph{Atomistic Simulations to Study Metallic Glasses: A Microscopic Investigation of Local Structural Excitations}, doctoral thesis, ETH Zurich, Diss. ETH No. 23535 (2016). doi:10.3929/ethz-b-000169215.
+\bibitem{derletmicro2021} P. M. Derlet and R. Maa\ss{}, ``Micro-plasticity in a fragile model binary glass,'' \emph{Acta Materialia} \textbf{209}, 116771 (2021). doi:10.1016/j.actamat.2021.116771.
+\bibitem{derlettransport2021} P. M. Derlet, H. Bocquet and R. Maa\ss{}, ``Viscosity and transport in a model fragile metallic glass,'' \emph{Phys. Rev. Materials} \textbf{5}, 125601 (2021). doi:10.1103/PhysRevMaterials.5.125601.
+\bibitem{gillespie1976} D. T. Gillespie, ``A general method for numerically simulating the stochastic time evolution of coupled chemical reactions,'' \emph{J. Comput. Phys.} \textbf{22}, 403--434 (1976). doi:10.1016/0021-9991(76)90041-3.
+\bibitem{picard2004} G. Picard, A. Ajdari, F. Lequeux and L. Bocquet, ``Elastic consequences of a single plastic event: a step towards the microscopic modeling of the flow of yield stress fluids,'' \emph{Eur. Phys. J. E} \textbf{15}, 371--381 (2004). doi:10.1140/epje/i2004-10054-8.
+\bibitem{lin2014} J. Lin, E. Lerner, A. Rosso and M. Wyart, ``Scaling description of the yielding transition in soft amorphous solids at zero temperature,'' \emph{Proc. Natl. Acad. Sci. USA} \textbf{111}, 14382--14387 (2014). doi:10.1073/pnas.1406391111.
+\bibitem{rudnicki1975} J. W. Rudnicki and J. R. Rice, ``Conditions for the localization of deformation in pressure-sensitive dilatant materials,'' \emph{J. Mech. Phys. Solids} \textbf{23}, 371--394 (1975). doi:10.1016/0022-5096(75)90001-0.
+\bibitem{jinlinder2019} T. Jin, H. M. Mourad, C. A. Bronkhorst, V. Livescu, X. Zhang, C. Linder and R. A. Regueiro, ``Three-dimensional explicit finite element formulation for shear localization with global tracking of embedded weak discontinuities,'' \emph{Computer Methods in Applied Mechanics and Engineering} \textbf{353}, 416--447 (2019). doi:10.1016/j.cma.2019.05.011.
+\bibitem{linderraina2013} C. Linder and A. Raina, ``A strong discontinuity approach on multiple levels to model solids at failure,'' \emph{Computer Methods in Applied Mechanics and Engineering} \textbf{253}, 558--583 (2013). doi:10.1016/j.cma.2012.07.005.
+\bibitem{linderzhang2013} C. Linder and X. Zhang, ``A marching cubes based failure surface propagation concept for three-dimensional finite elements with non-planar embedded strong discontinuities of higher-order kinematics,'' \emph{International Journal for Numerical Methods in Engineering} \textbf{96}, 339--372 (2013). doi:10.1002/nme.4546.
+\bibitem{miehegradient2014} C. Miehe, ``Variational gradient plasticity at finite strains. Part I: Mixed potentials for the evolution and update problems of gradient-extended dissipative solids,'' \emph{Computer Methods in Applied Mechanics and Engineering} \textbf{268}, 677--703 (2014). doi:10.1016/j.cma.2013.03.014.
+\bibitem{mieheductile2016} C. Miehe, F. Aldakheel and A. Raina, ``Phase field modeling of ductile fracture at finite strains: A variational gradient-extended plasticity-damage theory,'' \emph{International Journal of Plasticity} \textbf{84}, 1--32 (2016). doi:10.1016/j.ijplas.2016.04.011.
+\bibitem{bamerstone2019} \underline{F. Bamer}, F. Ebrahem and B. Markert, ``Athermal mechanical analysis of Stone-Wales defects in two-dimensional silica,'' \emph{Computational Materials Science} \textbf{163}, 301--307 (2019). doi:10.1016/j.commatsci.2019.03.050.
+\bibitem{bamerreverse2020} F. Ebrahem, \underline{F. Bamer} and B. Markert, ``Origin of reversible and irreversible atomic-scale rearrangements in a model two-dimensional network glass,'' \emph{Physical Review E} \textbf{102}, 033006 (2020). doi:10.1103/PhysRevE.102.033006.
+\bibitem{bamerevents2020} \underline{F. Bamer}, F. Ebrahem and B. Markert, ``Elementary plastic events in a Zachariasen glass under shear and pressure,'' \emph{Materialia} \textbf{9}, 100556 (2020). doi:10.1016/j.mtla.2019.100556.
+\bibitem{bamercritical2024} S. Shekh Alshabab, B. Markert and \underline{F. Bamer}, ``Criticality in the fracture of silica glass: Insights from molecular mechanics,'' \emph{Physical Review E} \textbf{109}, 034110 (2024). doi:10.1103/PhysRevE.109.034110.
+\bibitem{bamermapping2025} S. Shekh Alshabab, Z. Wu, B. Markert and \underline{F. Bamer}, ``Mapping Shear Transformation Zones in Silica Network Glass,'' \emph{Proceedings in Applied Mathematics and Mechanics} \textbf{25}, e202400199 (2025). doi:10.1002/pamm.202400199.
+\bibitem{bamerboson2023} T. Focks, B. Markert and \underline{F. Bamer}, ``Boson peak in disordered materials under shear deformation,'' \emph{Proceedings in Applied Mathematics and Mechanics} \textbf{23}, e202300166 (2023). doi:10.1002/pamm.202300166.
+\bibitem{quasivoids2026} G.-Q. Liu, \underline{S. Swayamjyoti}, N. Mousseau, M.-K. Fung, C.-T. Yip, B. Markert and \underline{F. Bamer}, ``Quasivoids in Polydisperse Glassy Systems With Atomistic PEL Exploration and Iso-Configuration Method,'' \emph{Proceedings in Applied Mathematics and Mechanics} \textbf{26}(2), e70144 (2026). doi:10.1002/pamm.70144.
+\bibitem{swayreview2025} G. R. Arumugam Kumar, K. Arora, M. Aggarwal, \underline{S. Swayamjyoti}, P. P. Singh, K. K. Sahu and R. Ranganathan, ``Structure--property predictions in metallic glasses: Insights from data-driven atomistic simulations,'' \emph{Journal of Materials Research} \textbf{40}, 36--68 (2025). doi:10.1557/s43578-024-01480-9.
+\bibitem{swayvisual2022} R. Kishore, \underline{S. Swayamjyoti}, S. Das, A. K. Gogineni, Z. Nussinov, D. Solenov and K. K. Sahu, ``Visual machine learning: Insight through eigenvectors, Chladni patterns, and community detection in 2D particulate structures,'' \emph{International Journal for Multiscale Computational Engineering} \textbf{20}(3), 125--145 (2022). doi:10.1615/IntJMultCompEng.2022041422.
+\bibitem{swaymodularity2020} R. Kishore, \underline{S. Swayamjyoti}, Z. Nussinov and K. K. Sahu, ``Performance traits of a newly proposed modularity function for spatial networks: Better assessment of clustering for unsupervised learning,'' \emph{IOP Conference Series: Materials Science and Engineering} \textbf{872}, 012017 (2020). doi:10.1088/1757-899X/872/1/012017.
+\bibitem{swaychapter2020} S. Das, H. Pegu, K. K. Sahu, A. K. Nayak, S. Ramakrishna, D. Datta and \underline{S. Swayamjyoti}, ``Machine learning in materials modeling---fundamentals and the opportunities in 2D materials,'' in \emph{Synthesis, Modeling, and Characterization of 2D Materials, and Their Heterostructures}, Elsevier, pp. 445--468 (2020). doi:10.1016/B978-0-12-818475-2.00019-2.
+\bibitem{swaypolymer2024} S. Kaur, \underline{S. Swayamjyoti}, V. Taneja, S. S. Padhee, V. Nigam and K. C. Jena, ``Molecular dynamics simulation of salt diffusion in constituting phosphazene-based polymer electrolyte,'' \emph{Journal of Physics: Condensed Matter} \textbf{36}, 445901 (2024). doi:10.1088/1361-648X/ad6727.
+\bibitem{swayclassify2020} A. K. Gogineni, \underline{S. Swayamjyoti}, D. Sahoo, K. K. Sahu and R. Kishore, ``Multi-Class classification of vulnerabilities in smart contracts using AWD-LSTM, with pre-trained encoder inspired from natural language processing,'' \emph{IOP SciNotes} \textbf{1}, 035002 (2020). doi:10.1088/2633-1357/abcd29.
+\bibitem{bamerswayfrog2026} S. P. Amirtharaj, Z. Xu, D. Strickland, B. Chowdhury, S. Acharya, P. Samantray, A. Prabhakar, K. K. Sahu, \underline{F. Bamer} and \underline{S. Swayamjyoti}, ``Numerically optimized FROG results for the study of red-shifted spectra in multi-frequency Raman generation,'' arXiv:2602.02463 (2026), \emph{preprint}. doi:10.48550/arXiv.2602.02463.
+\bibitem{swayharvester2022} A. M. Menon, T. R. Kopparthi, P. Omprakash, H. Verma, A. Haldar, \underline{S. Swayamjyoti}, K. K. Sahu and C. Featherston, ``Deep Learning-Based Optimization of Piezoelectric Vibration Energy Harvesters,'' in \emph{AIAA SCITECH 2022 Forum}, AIAA Paper 2022-2142 (2022). doi:10.2514/6.2022-2142.
+\end{thebibliography}
+\end{document}

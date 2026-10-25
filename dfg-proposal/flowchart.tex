@@ -1,0 +1,24 @@
+% Editable TikZ flowchart. Colour source: thesis Fig. 1.4 (red alpha/beta
+% activated traversals; blue underlying potential-energy/relaxation landscape).
+\begin{tikzpicture}[font=\small,>=Stealth,
+ common/.style={draw=black!65,fill=black!4,rounded corners,align=center,text width=12cm,minimum height=12mm},
+ thermal/.style={draw=red,fill=red!6,rounded corners,align=center,text width=5.3cm,minimum height=23mm},
+ mechanical/.style={draw=blue,fill=blue!5,rounded corners,align=center,text width=5.3cm,minimum height=23mm},
+ arr/.style={->,thick}]
+\node[common] (glass) {Metallic-glass reference ensembles\\Composition, quench history, size and local structure};
+\node[thermal,below left=9mm and -5.4cm of glass] (art) {Thermally activated branch\\ARTn: minima $\to$ saddle $\to$ minima\\Barriers, prefactors and physical rates};
+\node[mechanical,below right=9mm and -5.4cm of glass] (aqs) {Athermal branch\\AQS: strain increment and minimization\\Hessian softening and instability};
+\node[common,below=44mm of glass] (events) {Shared event descriptors\\Non-affine core, transformation strain, orientation and renewal};
+\node[common,below=9mm of events] (meso) {Interacting mesoscale events\\Elastic redistribution, avalanches and persistent shear bands};
+\node[common,below=9mm of meso] (gate) {Scale-transfer checks\\Rate preservation, Hill--Mandel work, fluctuations and RVE convergence};
+\node[common,below=9mm of gate] (cont) {Continuum plasticity and localization\\Constitutive evolution, tangent and independently determined length};
+\node[common,below=9mm of cont] (fracture) {Separate damage / fracture extension\\Independent cohesion mechanism, initiation and toughness calibration};
+\draw[arr,red] (glass.south west) ++(2,0) -- (art.north);
+\draw[arr,blue] (glass.south east) ++(-2,0) -- (aqs.north);
+\draw[arr,red] (art.south) -- (events.north west);
+\draw[arr,blue] (aqs.south) -- (events.north east);
+\draw[arr,blue] (events) -- (meso);
+\draw[arr,blue] (meso) -- (gate);
+\draw[arr] (gate) -- (cont);
+\draw[arr] (cont) -- (fracture);
+\end{tikzpicture}
