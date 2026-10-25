@@ -29,3 +29,32 @@ for (let i=0;i<points.length;i++) {
 }
 const atoms = document.getElementById('atoms');
 points.forEach((p,i)=>{const c=document.createElementNS(ns,'circle');c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',p.r*(.88+(p.z+1)*.16));c.setAttribute('fill',i%4===0?'url(#atom)':'url(#atomSoft)');c.setAttribute('opacity',String(.55+(p.z+1)*.21));atoms.appendChild(c)});
+
+// DFG proposal details populated from proposal-config.js.
+const proposal = window.dfgProposal || {};
+const assignText = (id, value) => {
+  const element = document.getElementById(id);
+  if (element && typeof value === 'string') element.textContent = value;
+};
+assignText('dfg-status', proposal.status);
+assignText('dfg-project-title', proposal.title);
+assignText('dfg-summary', proposal.summary);
+const fillList = (id, items) => {
+  const list = document.getElementById(id);
+  if (!list || !Array.isArray(items)) return;
+  list.replaceChildren();
+  for (const item of items) { const li = document.createElement('li'); li.textContent = item; list.append(li); }
+};
+fillList('dfg-objectives', proposal.objectives);
+fillList('dfg-workpackages', proposal.workPackages);
+if (typeof proposal.url === 'string' && /^https:\/\//.test(proposal.url)) {
+  document.getElementById('dfg-project-link').href = proposal.url;
+}
+const dfgToggle = document.getElementById('dfg-toggle');
+const dfgDetails = document.getElementById('dfg-details');
+dfgToggle?.addEventListener('click', () => {
+  const expanded = dfgToggle.getAttribute('aria-expanded') === 'true';
+  dfgToggle.setAttribute('aria-expanded', String(!expanded));
+  dfgDetails.hidden = expanded;
+  dfgToggle.querySelector('span').textContent = expanded ? '+' : '−';
+});

@@ -1,23 +1,18 @@
-# S. Swayamjyoti — Personal Research Website
+# S. Swayamjyoti — GitHub Pages academic portfolio
 
-A responsive, static portfolio built from the attached academic CV. No build tools or framework needed.
+Deploy to the repository serving your GitHub Pages site. Files must be placed at the **repository root**, not inside the ZIP's enclosing folder.
 
-## Preview locally
-Open `index.html` in a browser, or from this folder run `python3 -m http.server 8000` and visit `http://localhost:8000`.
+## Updates
+- White background throughout with red, blue, green and black accents; no yellow.
+- Rebalanced font scale: headings slightly smaller and smaller text slightly larger.
+- DFG Proposal section with a working expand/collapse control.
 
-## Publish with GitHub Pages
-1. Sign in to [GitHub](https://github.com/) and create a **public** repository, named exactly `swayamjyoti-sj.github.io`.
-2. Upload all **five files** in this folder to the repository root: `index.html`, `styles.css`, `script.js`, `Soumya_Swayamjyoti_CV.pdf`, and `README.md`. Commit the upload.
-3. Navigate to **Settings → Pages → Build and deployment**. Under **Source**, choose **Deploy from a branch**; select `main`, folder `/ (root)`; click **Save**.
-4. Your site will be available at `https://swayamjyoti-sj.github.io/` once Pages deployment finishes (assuming the GitHub username is `swayamjyoti-sj`).
+## DFG configuration
+Edit `proposal-config.js` to set the project title, proposal status, summary, objectives, work packages, and proposal URL. Changes display automatically when you reload the website. Placeholders do not indicate a submitted or approved DFG application.
 
-## Customize
-- Update the section content in `index.html`.
-- Update styling in `styles.css` and atomic illustration in `script.js`.
-- Replace the PDF using the same filename to keep both CV buttons functional.
-- No email address or social profile was invented. Add contact information only if you want it shown publicly.
+The **Open dedicated DFG proposal site** link currently points to `https://swayamjyoti-sj.github.io/dfg-proposal/`. It will only work once you publish that separate GitHub Pages repository.
 
-The website contains personal/professional CV information and links to a public Google Scholar profile. Review all information before making the repository public.
+## Publishing
+Upload all five website files plus the PDF to your Pages repository, overwriting matching filenames. GitHub Pages: Settings → Pages → Deploy from a branch → main / (root).
 
-## Design palette
-The site uses primary red (#FF3B30), blue (#174FC3) and yellow (#FFD600) with white and dark blue backgrounds for legibility.
+The file `Soumya_Swayamjyoti_CV.pdf` retains its original name and original content.
