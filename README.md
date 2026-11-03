@@ -8,7 +8,7 @@ This package updates the main portfolio website and adds a dedicated `dfg-propos
 - A new subfolder `dfg-proposal/` contains:
   - a standalone proposal webpage
   - colourful flowcharts and work-package diagrams
-  - proposal figures from the uploaded archive
+  - DFG proposal figures
   - downloadable source files and original ZIP
 
 ## GitHub upload
