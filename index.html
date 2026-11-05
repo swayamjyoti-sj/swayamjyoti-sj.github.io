@@ -12,18 +12,20 @@
 <style>
 .hero-right{min-width:0;display:flex;flex-direction:column;gap:10px;align-self:center}
 .home-contact{position:relative;z-index:2;text-align:right;align-self:stretch;background:#f5f8ff;border:1px solid #d5e1f2;border-top:4px solid #1748b3;border-radius:14px;padding:18px 20px;color:#24334a;box-shadow:0 14px 32px rgba(0,0,0,.12);overflow-wrap:anywhere}
-.home-contact-kicker{display:block;color:#16804e;font-size:.77rem;font-weight:800;letter-spacing:.1em;margin-bottom:6px}
+.home-contact-kicker{display:block;color:#d62839;font-size:.77rem;font-weight:800;letter-spacing:.1em;margin-bottom:6px}
 .home-contact strong{display:block;font-size:1rem;line-height:1.35}
 .home-contact address{font-style:normal;font-size:.89rem;line-height:1.5;margin:9px 0}
 .home-contact a{font-size:.89rem;color:#1748b3;font-weight:700;text-decoration:none}.home-contact a:hover{text-decoration:underline}
 .hero-right .hero-art{width:100%}
+@media(min-width:801px){.hero-grid{align-items:start}.hero-copy{padding-top:0}.hero-copy>.eyebrow{margin-top:0}.hero-right{align-self:start}.home-contact{margin-top:0}}
+.home-contact-phone{display:inline-block;margin-top:6px}
 @media(max-width:800px){.hero-right{width:100%}.home-contact{text-align:left}.hero-right .hero-art{height:275px}}
 </style>
 </head>
 <body>
   <header class="site-header" id="top">
     <div class="nav-wrap container">
-      <a class="brand" href="#top" aria-label="S. Swayamjyoti homepage"><span class="brand-mark">S<span class="brand-dot">.</span></span><span>S. SWAYAMJYOTI</span></a>
+      <a class="brand" href="#top" aria-label="S. Swayamjyoti homepage"><span class="brand-mark">S<span class="brand-dot">.</span></span><span>SWAYAMJYOTI</span></a>
       <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
       <nav id="primary-nav" aria-label="Primary navigation"><a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="dfg-proposal/">DFG Proposal</a><a class="nav-contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a></nav>
     </div>
@@ -45,7 +47,7 @@
             <span class="home-contact-kicker">CONTACT · RWTH AACHEN UNIVERSITY</span>
             <strong>Dr. sc. ETH Zurich S. Swayamjyoti</strong>
             <address>Institute of General Mechanics (IAM)<br>RWTH Aachen University<br>Eilfschornsteinstraße 18<br>52062 Aachen, Germany</address>
-            <a href="mailto:swayamjyoti@iam.rwth-aachen.de">swayamjyoti@iam.rwth-aachen.de</a>
+            <a href="mailto:swayamjyoti@iam.rwth-aachen.de">swayamjyoti@iam.rwth-aachen.de</a><br><a class="home-contact-phone" href="tel:+492418098282">Office: +49 241 80-98282</a>
           </aside>
         <div class="hero-art" aria-label="Abstract illustration of an atomistic material lattice">
           <div class="art-label art-label-top"><span class="art-label-index">01 / RESEARCH DOMAIN</span><span>ATOMISTIC STRUCTURES</span></div>
