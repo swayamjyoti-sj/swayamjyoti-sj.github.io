@@ -7,7 +7,7 @@ This package updates the main portfolio website and adds a dedicated `dfg-propos
 - The proposal preview on the homepage is populated with real proposal title, summary, objectives and work packages.
 - A new subfolder `dfg-proposal/` contains:
   - a standalone proposal webpage
-  - colourful flowcharts and work-package diagrams
+  - flowcharts and work-package diagrams
   - DFG proposal figures
   - downloadable source files and original ZIP
 
