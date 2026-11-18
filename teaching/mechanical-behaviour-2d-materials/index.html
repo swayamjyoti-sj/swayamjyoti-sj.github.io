@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mechanical Behaviour of 2D Materials | S. Swayamjyoti</title>
+<meta name="description" content="A bachelor-level lesson on the elasticity, bending and failure of atomically thin materials, with IAM lecture slides, short videos and a battery interface case study.">
+<link rel="canonical" href="https://swayamjyoti-sj.github.io/teaching/mechanical-behaviour-2d-materials/">
+<link rel="stylesheet" href="lesson.css">
+</head>
+<body>
+<header><nav class="wrap top" aria-label="Navigation">
+<a class="brand" href="../../">S. Swayamjyoti</a>
+<div><a href="../">Teaching</a><a href="#videos">Videos</a><a href="#practice">Practice</a><a href="#sources">Sources</a></div>
+</nav></header>
+<main id="main">
+<section class="hero">
+<div class="wrap hero-grid">
+<div><p class="eyebrow">Bachelor lecture · 45 minutes</p>
+<h1>Mechanical Behaviour of 2D Materials</h1>
+<p class="lead">How can a sheet one atom thick bend easily and still resist stretching? Start with graphene, then use the mechanics of thin sheets to reason about battery interfaces.</p>
+<a class="button" href="mechanical-behaviour-2d-materials-iam.pptx" download>Download IAM lecture slides <span aria-hidden="true">↓</span></a>
+<p class="file-note">PowerPoint · 12 slides with instructor notes</p></div>
+<figure><img src="graphene-lattice.png" alt="Carbon atoms and bonds form a flat honeycomb lattice."><figcaption>Graphene honeycomb lattice · schematic</figcaption></figure>
+</div>
+</section>
+<section class="wrap section" aria-labelledby="mechanics-title" id="mechanics">
+<p class="eyebrow">Lecture notes</p>
+<h2 id="mechanics-title">From atomic layers to mechanical response</h2>
+<p class="intro">You’ll learn to calculate sheet stress, interpret an indentation experiment and distinguish elastic stiffness from breaking strength. Bring a working knowledge of force, strain and SI units.</p>
+<div class="cards">
+<article><h3>A layer at a time</h3><p>Graphite is a stack of carbon sheets. Graphene is one of those sheets. Hexagonal boron nitride (h-BN) has alternating boron and nitrogen atoms. A monolayer of MoS₂ has a molybdenum plane between two sulfur planes.</p></article>
+<article><h3>Stretching and bending</h3><p>Stretching changes distances within a sheet. Bending changes its curvature. Bending rigidity measures the energy cost of curvature. A clamped sheet pushed far enough also stretches as it deflects.</p></article>
+<article><h3>Stiffness and failure</h3><p>Elastic stiffness is the initial slope of a stress–strain curve. Strength measures the stress at failure. A flaw can concentrate stress near its tip and reduce the load needed to cause failure.</p></article>
+</div>
+<div class="split">
+<figure><img src="linear-elastic.png" loading="lazy" alt="Illustrative straight line from zero to 6.8 newtons per metre at two percent strain."><figcaption>Small-strain illustration using graphene’s reported sheet modulus.</figcaption></figure>
+<div><h3>Use force per unit width</h3><p>For uniaxial tension, engineering strain is <strong>ε = ΔL/L₀</strong> and nominal sheet stress is <strong>N = F/w₀</strong>, where <em>w₀</em> is the original width. The small-strain sheet modulus is <strong>Y₂D = dN/dε</strong>. Both sheet stress and sheet modulus have units of N/m.</p><p>At 1% strain, a linear sheet with Y₂D = 340 N/m has a sheet stress of 3.4 N/m. A conversion to pascals requires an effective thickness convention.</p></div>
+</div>
+<div class="split">
+<figure><img src="afm-indentation.png" loading="lazy" alt="An AFM tip pushes the centre of a clamped membrane down by an indentation depth delta."><figcaption>Centre indentation of a suspended membrane · schematic</figcaption></figure>
+<div><h3>Measure a suspended membrane</h3><p>An atomic force microscope (AFM) pushes the centre of a monolayer suspended over a hole. In a simplified membrane model, <strong>F ≈ Aδ + Bδ³</strong>. The linear term reflects pretension and the cubic term reflects geometric stretching. Its coefficient also depends on the hole radius, sheet modulus and Poisson ratio.</p><p>Lee and colleagues inferred a sheet modulus of approximately 340 N/m and an intrinsic breaking strength of approximately 42 N/m in monolayer graphene under their test conditions. <a href="https://doi.org/10.1126/science.1157996">Lee et al. (2008)</a></p></div>
+</div>
+</section>
+<section class="band" id="videos"><div class="wrap section">
+<p class="eyebrow">Watch and discuss</p><h2>Two short teaching videos</h2>
+<p class="intro">These companion lessons use original illustrations and synthetic narration. Andre Geim and Konstantin Novoselov shared the 2010 Nobel Prize in Physics for their groundbreaking experiments on graphene. Their original recordings are hosted by NobelPrize.org.</p>
+<div class="watch">
+<article><h3>From graphite to graphene</h3>
+<video controls preload="none" playsinline poster="from-graphite-to-graphene.jpg" aria-label="From graphite to graphene"><source src="from-graphite-to-graphene.mp4" type="video/mp4"><track kind="captions" src="from-graphite-to-graphene.vtt" srclang="en" label="English" default><a href="from-graphite-to-graphene.mp4">Download the video</a></video>
+<p>Why can adhesive tape separate thin flakes from graphite? Look for the role of experimentation in Geim’s account.</p>
+<a href="https://www.nobelprize.org/prizes/physics/2010/geim/lecture/">Andre Geim · Random Walk to Graphene ↗</a>
+<details><summary>Read the transcript</summary><p>Graphite consists of stacked carbon sheets.</p><p>The bonds in each sheet are strong, while the attraction between sheets is much weaker.</p><p>That difference makes it possible to peel thin flakes from graphite.</p><p>Andre Geim and Konstantin Novoselov pioneered experiments with graphene.</p><p>Mechanical exfoliation uses adhesive tape to peel thin flakes.</p><p>Identifying a single layer is an essential part of the experiment.</p><p>A suspended sheet can curve out of plane with a small bending energy.</p><p>Pulling it in plane stretches the carbon bonds.</p><p>This is how an atomically thin sheet can bend easily and still resist stretching.</p><p>Pause and explain why it is easier to separate sheets in graphite than to pull a carbon sheet apart.</p><p>Then listen for the experimental choices in Andre Geim’s Nobel lecture.</p></details>
+</article>
+<article><h3>Measuring an atomic sheet</h3>
+<video controls preload="none" playsinline poster="measuring-an-atomic-sheet.jpg" aria-label="Measuring an atomic sheet"><source src="measuring-an-atomic-sheet.mp4" type="video/mp4"><track kind="captions" src="measuring-an-atomic-sheet.vtt" srclang="en" label="English" default><a href="measuring-an-atomic-sheet.mp4">Download the video</a></video>
+<p>What makes a material a monolayer? Use Novoselov’s examples to compare graphene with other 2D crystals.</p>
+<a href="https://www.nobelprize.org/prizes/physics/2010/novoselov/lecture/">Konstantin Novoselov · Graphene: Materials in the Flatland ↗</a>
+<details><summary>Read the transcript</summary><p>Konstantin Novoselov’s Nobel lecture puts graphene in a broader family of two dimensional crystals.</p><p>Graphene has one atomic plane.</p><p>A monolayer of molybdenum disulfide has three atomic planes in a single structural layer.</p><p>Take a thin ribbon and pull along its length.</p><p>Divide the tensile force by the ribbon width to get sheet stress in newtons per metre.</p><p>The slope of sheet stress versus strain at small strain is the sheet modulus.</p><p>Lee and colleagues pushed a suspended graphene membrane with an atomic force microscope.</p><p>They fitted the force versus depth curve to infer stiffness.</p><p>As the tip pushes farther, the membrane stretches geometrically.</p><p>For a sheet modulus of three hundred forty newtons per metre and one percent strain, the linear estimate of sheet stress is three point four newtons per metre.</p><p>Pause and predict the force on a ribbon two micrometres wide.</p></details>
+</article>
+</div></div></section>
+<section class="wrap section" id="practice">
+<p class="eyebrow">Practice and discussion</p><h2>Apply the mechanics</h2>
+<div class="split">
+<figure><img src="battery-interface.png" loading="lazy" alt="An active material expands laterally above a 2D interlayer and a current collector."><figcaption>Possible 2D interlayer in an electrode · schematic inspired by Das et al., Figure 9.</figcaption></figure>
+<div><h3>Battery interface case study</h3><p>During cycling, an active material can swell and shrink, driving interface damage or cracking inside the material. Das et al. discuss how a 2D interlayer might allow sliding and reduce stress transfer in certain material combinations.</p><p><strong>Design question.</strong> How would you test whether added sliding reduces damage while retaining sufficient adhesion and electrical contact?</p><p><strong>ML extension.</strong> Pick a measurable target such as interfacial shear strength. Use chemistry, defect density and test conditions as inputs. Compare predictions against a median baseline on a held-out material family and report mean absolute error.</p></div>
+</div>
+<details><summary>A 2 μm strip with Y₂D = 340 N/m is stretched by 0.5%. What force does it carry?</summary><p>In the linear regime, N = 340 × 0.005 = 1.7 N/m. Multiply by the strip width, 2 × 10⁻⁶ m, to get 3.4 μN.</p></details>
+<details><summary>Why can the force–indentation curve be nonlinear even for a linearly elastic sheet?</summary><p>As the centre moves farther down, the sheet stretches because its edges are clamped. The changing geometry produces a cubic term in the simplified membrane model.</p></details>
+<details><summary>Why hold out a material family when testing the ML model?</summary><p>Repeated tests on related interfaces can be very similar. Grouping by family tests how well the model transfers to a family it has never seen.</p></details>
+</section>
+<section class="band" id="sources"><div class="wrap section">
+<h2>Sources and credits</h2>
+<ul class="references">
+<li>Shreeja Das, Hansraj Pegu, Kisor Sahu, Ameeya Kumar Nayak, Seeram Ramakrishna, Dibakar Datta and Soumya Swayamjyoti (2020), <em>Machine Learning in Materials Modeling – Fundamentals and the Opportunities in 2D Materials</em>, pp. 445–468. Sections 5 and 6.3 inform the ML exercise and battery case study. <a href="https://arxiv.org/pdf/2001.04605">arXiv preprint</a> · <a href="https://www.sciencedirect.com/science/chapter/edited-volume/abs/pii/B9780128184752000192">Published chapter</a></li>
+<li>Changgu Lee, Xiaoding Wei, Jeffrey W. Kysar and James Hone (2008), <em>Measurement of the Elastic Properties and Intrinsic Strength of Monolayer Graphene</em>, Science 321, 385–388. <a href="https://doi.org/10.1126/science.1157996">Research article</a></li>
+<li>Andre Geim and Konstantin Novoselov, 2010 Nobel Prize laureates in Physics. Their Nobel lectures informed the companion videos’ historical and materials context. <a href="https://www.nobelprize.org/prizes/physics/2010/summary/">Nobel Prize credit</a></li>
+</ul>
+</div></section>
+</main>
+<footer class="wrap foot"><a href="../">← Back to Teaching</a><span>Soumya Swayamjyoti</span></footer>
+</body></html>
