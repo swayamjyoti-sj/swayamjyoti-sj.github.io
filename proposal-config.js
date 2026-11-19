@@ -1,8 +1,8 @@
-// Portfolio DFG proposal preview configuration.
-window.dfgProposal = {
+// Portfolio research proposal preview configuration.
+window.researchProposal = {
   status: "Draft proposal prepared",
   title: "From Atomistic Local Structural Excitations to Plasticity and Fracture in Metallic Glasses",
-  summary: "A 36-month DFG proposal on rate-preserving kinetic scale bridging from atomistic local structural excitations to mesoscale stochastic elastoplasticity, continuum localization, and fracture in metallic glasses.",
+  summary: "A 36-month Metallic Glass Research on rate-preserving kinetic scale bridging from atomistic local structural excitations to mesoscale stochastic elastoplasticity, continuum localization, and fracture in metallic glasses.",
   objectives: [
     "Identify atomistic local structural excitations and event descriptors using ARTn and AQS calculations",
     "Transfer barriers, rates, eigenstrains and renewal statistics into stochastic mesoscale elastoplastic models",
@@ -15,5 +15,5 @@ window.dfgProposal = {
     "WP4 — Homogenization, continuum plasticity and fracture (M21–M33)",
     "WP5 — Validation, reproducibility and dissemination (M27–M36)"
   ],
-  url: "https://swayamjyoti-sj.github.io/dfg-proposal/"
+  url: "https://swayamjyoti-sj.github.io/metallic-glass-research/"
 };

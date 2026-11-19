@@ -4,7 +4,7 @@
 /* White-first RGB + black redesign: no coloured section backgrounds. */
 :root{--navy:#0756B8;--paper:#FFFFFF;--ink:#0A0A0A;--muted:#191919;--line:#D4D4D4;--teal:#CB2027;--mint:#108344}
 html{background:#FFFFFF}body{background:#FFFFFF;color:#0A0A0A}
-.hero,.about-section,.research-section,.publications-section,.experience-section,.education-section,.contact-section,.footer,.dfg-section{background:#FFFFFF!important;color:#0A0A0A!important}
+.hero,.about-section,.research-section,.publications-section,.experience-section,.education-section,.contact-section,.footer,.research-section{background:#FFFFFF!important;color:#0A0A0A!important}
 .hero-glow{display:none}.site-header{position:relative;background:#FFFFFF;color:#0A0A0A;border-bottom:1px solid #D4D4D4}
 .brand,.site-header nav a,.site-header nav .nav-contact{color:#0A0A0A}
 .brand-dot,.contact-motif span,.art-asterisk,.art-label-index{color:#14854B}
@@ -32,28 +32,28 @@ h1{font-size:clamp(39px,4.0vw,60px);line-height:1.17}
 h2{font-size:clamp(32px,3.2vw,48px);line-height:1.2}
 .contact-section h2{font-size:clamp(33px,3.8vw,55px)}
 .hero-lead{font-size:18px}.about-text .large-text{font-size:19px}
-.about-text p,.section-heading>p,.contact-section p,.dfg-intro{font-size:17px}
-.research-card p,.timeline p,.publication p,.education-card p,.dfg-panel p{font-size:15px}
+.about-text p,.section-heading>p,.contact-section p,.research-intro{font-size:17px}
+.research-card p,.timeline p,.publication p,.education-card p,.research-panel p{font-size:15px}
 nav a,.brand,.eyebrow,.section-kicker,.timeline-period,.pub-type,.education-card>span,.tags span,.card-index,.stat-label,.footer-inner{font-size:13px}
-.button,.inline-link,.dfg-link{font-size:14px}
+.button,.inline-link,.research-link{font-size:14px}
 .research-card h3,.publication h3,.education-card h3,.timeline h3{font-size:20px}
 .art-label{font-size:12px}.hero-stats .stat-number{font-size:22px}
-/* Configurable, interactive DFG sub-section */
-.dfg-section{border-top:1px solid #D4D4D4}
-.dfg-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:7%;align-items:start}
-.dfg-intro{line-height:1.8;max-width:440px;margin-top:25px}
-.dfg-panel{border:1px solid #CFCFCF;border-top:5px solid #14854B;padding:32px;background:white}
-.dfg-status{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#0F7542}
-.dfg-panel h3{font:800 23px/1.35 var(--display);margin:17px 0 13px;color:#0B55AB}
-.dfg-panel p{line-height:1.75;color:#161616}
-.dfg-expand{display:flex;width:100%;align-items:center;justify-content:space-between;margin:26px 0 18px;padding:15px 0;background:none;border:0;border-top:1px solid #CFCFCF;border-bottom:1px solid #CFCFCF;color:#0B55AB;font-weight:800;cursor:pointer;text-align:left}
-.dfg-expand:hover,.dfg-expand:focus-visible{color:#C5242A}
-.dfg-details{padding:0 0 12px}.dfg-details[hidden]{display:none}
-.dfg-details h4{margin:19px 0 8px;font-size:16px}.dfg-details ul{margin:0;padding-left:22px;line-height:1.7;font-size:15px}
-.dfg-helper{border-left:3px solid #C5242A;padding-left:12px;margin-top:24px}
-.dfg-link{display:inline-flex;gap:8px;align-items:center;background:#0B55AB;color:#FFFFFF;padding:13px 17px;font-weight:800;margin-top:4px}
-.dfg-link:hover{background:#084186}
-@media(max-width:700px){.hero{padding-top:48px}.site-header nav{background:#FFFFFF;border-bottom:1px solid #CFCFCF}.site-header nav a{color:#0A0A0A}.hero h1{font-size:clamp(37px,8vw,50px)}h2{font-size:clamp(31px,7vw,41px)}.contact-section h2{font-size:clamp(33px,7vw,45px)}.dfg-layout{grid-template-columns:1fr;gap:24px}.dfg-panel{padding:22px}.hero-art{height:265px}.hero-stats>div,.hero-stats>div:first-child{border-left-color:#14854B}.menu-toggle span{background:#0A0A0A!important}}
+/* Configurable, interactive research section */
+.research-section{border-top:1px solid #D4D4D4}
+.research-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:7%;align-items:start}
+.research-intro{line-height:1.8;max-width:440px;margin-top:25px}
+.research-panel{border:1px solid #CFCFCF;border-top:5px solid #14854B;padding:32px;background:white}
+.research-status{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#0F7542}
+.research-panel h3{font:800 23px/1.35 var(--display);margin:17px 0 13px;color:#0B55AB}
+.research-panel p{line-height:1.75;color:#161616}
+.research-expand{display:flex;width:100%;align-items:center;justify-content:space-between;margin:26px 0 18px;padding:15px 0;background:none;border:0;border-top:1px solid #CFCFCF;border-bottom:1px solid #CFCFCF;color:#0B55AB;font-weight:800;cursor:pointer;text-align:left}
+.research-expand:hover,.research-expand:focus-visible{color:#C5242A}
+.research-details{padding:0 0 12px}.research-details[hidden]{display:none}
+.research-details h4{margin:19px 0 8px;font-size:16px}.research-details ul{margin:0;padding-left:22px;line-height:1.7;font-size:15px}
+.research-helper{border-left:3px solid #C5242A;padding-left:12px;margin-top:24px}
+.research-link{display:inline-flex;gap:8px;align-items:center;background:#0B55AB;color:#FFFFFF;padding:13px 17px;font-weight:800;margin-top:4px}
+.research-link:hover{background:#084186}
+@media(max-width:700px){.hero{padding-top:48px}.site-header nav{background:#FFFFFF;border-bottom:1px solid #CFCFCF}.site-header nav a{color:#0A0A0A}.hero h1{font-size:clamp(37px,8vw,50px)}h2{font-size:clamp(31px,7vw,41px)}.contact-section h2{font-size:clamp(33px,7vw,45px)}.research-layout{grid-template-columns:1fr;gap:24px}.research-panel{padding:22px}.hero-art{height:265px}.hero-stats>div,.hero-stats>div:first-child{border-left-color:#14854B}.menu-toggle span{background:#0A0A0A!important}}
 
 /* 2026 typography refinement: navigation matches introduction text (18px). */
 .site-header nav a,.site-header nav .nav-contact{font-size:18px;line-height:1.5;letter-spacing:0}
@@ -87,7 +87,7 @@ h2{font-size:clamp(30px,2.8vw,40px);line-height:1.24;letter-spacing:-.04em}
 .hero-stats .stat-label, .eyebrow, .section-kicker,
 .card-index, .pub-type, .publication-note, .timeline-period,
 .timeline-org, .education-card>span, .tags span,
-.dfg-status, .dfg-helper, .footer-inner, .brand {
+.research-status, .research-helper, .footer-inner, .brand {
   font-size:20px;
   line-height:1.55;
   letter-spacing:0;
@@ -96,11 +96,11 @@ h2{font-size:clamp(30px,2.8vw,40px);line-height:1.24;letter-spacing:-.04em}
 .hero-art .art-asterisk {font-size:24px}
 .hero-art .art-label {gap:6px}
 .stat-label,.hero-location {color:#111111}
-.research-card p,.publication p,.timeline p,.education-card p,.dfg-details ul {font-size:18px;line-height:1.7}
+.research-card p,.publication p,.timeline p,.education-card p,.research-details ul {font-size:18px;line-height:1.7}
 @media(max-width:700px){
  .hero-location,.hero-stats .stat-label,.eyebrow,.section-kicker,
  .card-index,.pub-type,.publication-note,.timeline-period,.timeline-org,
- .education-card>span,.tags span,.dfg-status,.dfg-helper,.footer-inner,.brand {font-size:18px}
+ .education-card>span,.tags span,.research-status,.research-helper,.footer-inner,.brand {font-size:18px}
  .hero-stats .stat-number{font-size:25px}
 }
 
