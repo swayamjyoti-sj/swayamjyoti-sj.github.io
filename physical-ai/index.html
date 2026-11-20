@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An illustrated guide to Physical AI, action-conditioned world models, robot learning, simulation, and scientific discovery.">
+<link rel="canonical" href="https://swayamjyoti-sj.github.io/physical-ai/">
+<link rel="stylesheet" href="../styles.css">
+<title>Physical AI and World Models | S. Swayamjyoti</title>
+<style>
+.physical { color:#182843; }
+.physical a:focus-visible { outline:3px solid #dc7128; outline-offset:4px; }
+.physical .intro { background:#0b3d91; color:white; padding:28px 0 56px; }
+.physical .home-link { display:inline-block; margin-bottom:36px; font-weight:700; text-decoration:underline; text-underline-offset:4px; }
+.physical h1 { white-space:normal; margin:0 0 16px; font-size:clamp(2.85rem,8vw,5.5rem); }
+.physical .standfirst { margin:0; max-width:42rem; color:#e5efff; font-size:clamp(1.1rem,2.5vw,1.45rem); line-height:1.55; }
+.physical .layout { display:grid; grid-template-columns:minmax(0,1fr) 13rem; gap:clamp(24px,5vw,72px); align-items:start; padding-block:40px 72px; }
+.physical article { min-width:0; line-height:1.76; }
+.physical article section + section { margin-top:46px; padding-top:28px; border-top:1px solid #c4d6ef; }
+.physical h2 { color:#0b3d91; letter-spacing:-.04em; font-size:clamp(1.8rem,4vw,2.65rem); line-height:1.15; margin:0 0 16px; }
+.physical h3 { margin:22px 0 6px; line-height:1.35; }
+.physical p { margin:0 0 14px; }
+.physical li + li { margin-top:8px; }
+.physical article a,.physical .toc a { color:#1748a0; text-decoration:underline; text-underline-offset:3px; }
+.physical .toc { position:sticky; top:24px; display:block; border-left:2px solid #bed3f3; padding-left:18px; }
+.physical .toc ul { padding:0; margin-bottom:0; list-style:none; }
+.physical .toc a { display:inline-block; font-size:1rem; line-height:1.35; padding-block:3px; }
+.physical .model { border:1px solid #c4d6ef; border-radius:14px; background:#eef5ff; margin:20px 0; padding:20px; }
+.physical .loop { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); list-style:none; gap:10px; padding:0; margin:0 0 14px; }
+.physical .loop li { margin:0; padding:12px; border-radius:8px; background:#fff; line-height:1.4; }
+.physical .loop strong { display:block; color:#0b3d91; margin-bottom:4px; }
+.physical details { border-top:1px solid #c4d6ef; padding:9px 0; }
+.physical details p { margin:6px 0 0; }
+.physical summary { cursor:pointer; color:#1748a0; font-weight:700; }
+.physical .foot { padding-block:24px; border-top:1px solid #c4d6ef; }
+.physical .foot a { color:#1748a0; text-decoration:underline; }
+@media(max-width:850px){ .physical .layout { grid-template-columns:minmax(0,1fr); }.physical .toc { position:static; grid-row:1; }.physical .toc ul { display:flex; flex-wrap:wrap; gap:4px 18px; }.physical .toc li { margin:0; } }
+@media(max-width:560px){ .physical .loop { grid-template-columns:repeat(2,minmax(0,1fr)); }.physical .container { padding-inline:20px; } }
+@media(prefers-reduced-motion:reduce){html { scroll-behavior:auto; }}
+</style>
+</head>
+<body class="physical">
+<header class="intro">
+  <div class="container">
+    <a class="home-link" href="../">S. Swayamjyoti · Home</a>
+    <h1>Physical AI</h1>
+    <p class="standfirst">World models could give AI systems a way to predict the consequences of their actions before taking them. That could change how robots learn, how engineers validate autonomy, and how scientists choose their next experiment.</p>
+  </div>
+</header>
+<main class="container layout">
+  <article>
+    <section id="physical-ai">
+      <h2>What is Physical AI?</h2>
+      <p>Physical AI describes systems that sense and act in the physical world. A robotic arm, for instance, can combine cameras, joint encoders and a force sensor to estimate where an object is, choose a grasp and adjust its grip as contact changes. The environment responds to every action, and those responses become new observations.</p>
+      <p>A typical system combines perception and state estimation, a planner or policy, low-level control, and independent safety limits. The planner may choose a goal or a short sequence of actions. A faster controller executes commands and handles immediate feedback. A world model can inform decisions inside this loop by forecasting what might happen next.</p>
+    </section>
+    <section id="world-models">
+      <h2>What a world model predicts</h2>
+      <p>A world model is a predictive representation of how an environment evolves. An action-conditioned model estimates possible futures given both the current information and a proposed action. For a robot, the hidden state can include an object’s pose behind an occlusion, its grip stability, or a range of plausible friction values. Several recent observations can help estimate that state.</p>
+      <figure class="model">
+        <ol class="loop">
+          <li><strong>Observe</strong> Read sensors and estimate the current state.</li>
+          <li><strong>Predict</strong> Roll out likely outcomes of candidate actions.</li>
+          <li><strong>Act</strong> Choose a feasible action and execute it.</li>
+          <li><strong>Update</strong> Compare the new observation with the forecast and plan again.</li>
+        </ol>
+        <figcaption>In model predictive control, the system usually executes the first action of a planned sequence and replans when new measurements arrive.</figcaption>
+      </figure>
+      <h3>A grasping example</h3>
+      <p>Imagine moving a cup with an unknown fill level. A model can estimate the chance of slipping or spilling under different movements. Open each option to see what the planner would need to predict.</p>
+      <div class="model">
+        <details><summary>Lift quickly</summary><p>A fast lift can save time. It also raises peak loads and may cause slippage or liquid motion if the cup is heavier than expected.</p></details>
+        <details><summary>Lift slowly and monitor grip</summary><p>A slower first motion gives the controller time to detect slip and stabilize the grasp. The planner needs to account for the longer cycle time.</p></details>
+        <details><summary>Pause and estimate the load</summary><p>A brief force measurement may reduce uncertainty before the robot commits to a lift. The planner weighs the value of the measurement against the extra time.</p></details>
+      </div>
+      <h3>Different models serve different decisions</h3>
+      <ul>
+        <li><strong>Physics simulators</strong> apply explicit equations and constraints. They support controlled experiments, with accuracy limited by assumptions and estimated parameters.</li>
+        <li><strong>Learned latent dynamics</strong> predict changes in a compact internal state. This can make it cheaper to evaluate many rollouts when a controller only needs task-relevant information.</li>
+        <li><strong>Generative video models</strong> can predict visual observations and generate scenarios. Planning applications need reliable responses to specific actions, along with validation of contact, geometry and timing.</li>
+        <li><strong>Hybrid models</strong> can use mechanics for known dynamics and machine learning for uncertain terms, such as friction or behavior that is expensive to simulate.</li>
+      </ul>
+      <p>With a vision-language-action policy, images and instructions can map directly to commands. A world model answers a complementary question about the likely outcome of each command. One system can use both. Related work includes <a href="https://arxiv.org/abs/2307.15818">RT-2</a>, <a href="https://arxiv.org/abs/2301.04104">DreamerV3</a>, and <a href="https://arxiv.org/abs/2402.15391">Genie</a>.</p>
+    </section>
+    <section id="training">
+      <h2>How world models learn</h2>
+      <p>Training can draw on timestamped sensor readings, action logs, demonstrations, simulator trajectories and unlabeled video. Passive video can teach visual motion and regularities. To predict the effect of a specific intervention, a system also needs evidence about which actions occurred and how the environment responded, whether from recorded controls, controlled experiments or a validated simulator.</p>
+      <p>Training objectives can include predicting future sensor readings or latent states, estimating rewards and failure events, and respecting physical constraints. Sensor synchronization, diverse examples and calibrated uncertainty matter especially for rare events and contact transitions. Simulators can vary mass, friction, lighting and sensor noise. Real measurements are needed to calibrate those variations and assess transfer.</p>
+      <p>Some systems learn a policy using simulated rollouts. Others score candidate actions online. Longer rollouts can accumulate error and encourage a planner to choose unrealistic trajectories that look favorable inside the model. Short horizons, frequent replanning and treating uncertain predictions conservatively can help. For representative approaches, see <a href="https://arxiv.org/abs/1803.10122">World Models</a> and <a href="https://arxiv.org/abs/2203.04955">TD-MPC</a>.</p>
+      <p>Recent directions include learning predictive representations from video before adapting them with robot actions, as in V-JEPA 2, and building reusable tools for generating and filtering simulation data, as in Cosmos. Their value for a given task depends on how accurately they predict the effects of controls and how much real-world validation the application requires. <a href="https://arxiv.org/abs/2506.09985">V-JEPA 2</a> · <a href="https://arxiv.org/abs/2501.03575">Cosmos</a></p>
+    </section>
+    <section id="applications">
+      <h2>Where it could change practice</h2>
+      <h3>Robotics and manufacturing</h3>
+      <p>A robot could compare alternative grasps before handling unfamiliar parts, train recovery behaviors in simulation, and use real failures to improve its predictions. In manufacturing, the economics hinge on better first-pass yield, lower downtime, and performance on new parts without extensive reprogramming.</p>
+      <h3>Autonomous mobility</h3>
+      <p>Forecasting multiple possible trajectories for surrounding agents can help a system plan under uncertainty. Offline scenario generation can expand test coverage for unusual road conditions. Closed-loop validation still needs to measure interactions, intervention rates, and failure severity.</p>
+      <h3>Scientific discovery and materials engineering</h3>
+      <p>The same predictive loop can help decide which experiment or simulation to run next. In materials research, a model could estimate how loading rate or temperature changes the likelihood of localized deformation. An active learner could prioritize atomistic simulations where predicted mechanisms disagree, then use those results to refine a continuum-scale model. Useful checks include stress–strain response, localization patterns, transfer across loading histories, and uncertainty compared with independent experiments. See the site’s <a href="../metallic-glass-research/">Metallic Glass Research</a> page and related work on <a href="https://arxiv.org/abs/1502.01366">learning interatomic potentials</a>.</p>
+    </section>
+    <section id="validation">
+      <h2>What counts as evidence</h2>
+      <ul>
+        <li><strong>Prediction.</strong> Test one-step and multi-step error, physical consistency and uncertainty calibration under held-out actions, objects and environments. Report performance near contact and failure boundaries.</li>
+        <li><strong>Control.</strong> Compare closed-loop success, recovery rate, interventions, latency and constraint violations against a strong baseline under the same conditions.</li>
+        <li><strong>Transfer.</strong> Measure how much real data and adaptation are needed across sites, robots and operating conditions. Simulator scores can help diagnose failures before real-world validation.</li>
+        <li><strong>Safety.</strong> Use independent force and speed limits, workspace constraints, emergency stops and human oversight appropriate to the application. Define when the system should slow down, stop or ask for help.</li>
+      </ul>
+    </section>
+    <section id="outlook">
+      <h2>How world models could shape the next AI revolution</h2>
+      <p>The strongest case is that prediction makes physical learning more efficient. Real trials are slow, expensive and sometimes risky. If a validated model can screen many candidate actions cheaply, physical trials can focus on verifying high-value decisions, resolving uncertainty and discovering cases the model missed. Each deployment could then produce more informative data for the next round of training.</p>
+      <p>A second possibility is transfer. Models that capture shared regularities in motion and contact could reduce the effort needed to adapt a system to a new task. The open question is how far that transfer extends across robot bodies, sensing setups and materials. Near-term gains are most plausible in well-instrumented settings with measurable outcomes. Wider deployment depends on reliable uncertainty estimates, fast planning, representative data and credible evidence of safety under real operating conditions.</p>
+    </section>
+    <section id="reading">
+      <h2>Further reading</h2>
+      <ul>
+        <li>Ha &amp; Schmidhuber (2018), a foundational learned dynamics and control architecture. <a href="https://arxiv.org/abs/1803.10122">World Models</a></li>
+        <li>Hafner et al. (2023), reinforcement learning with imagined trajectories across diverse tasks. <a href="https://arxiv.org/abs/2301.04104">Mastering Diverse Domains through World Models</a></li>
+        <li>Hansen et al. (2022), short-horizon planning in a learned latent space. <a href="https://arxiv.org/abs/2203.04955">Temporal Difference Learning for Model Predictive Control</a></li>
+        <li>Bruce et al. (2024), interactive environments learned from video. <a href="https://arxiv.org/abs/2402.15391">Genie: Generative Interactive Environments</a></li>
+        <li>Zitkovich et al. (2023), a vision-language-action model for robotic control. <a href="https://arxiv.org/abs/2307.15818">RT-2</a></li>
+        <li>Tobin et al. (2017), randomizing simulated conditions to support transfer. <a href="https://arxiv.org/abs/1703.06907">Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World</a></li>
+      </ul>
+    </section>
+  </article>
+  <nav class="toc" aria-label="On this page">
+    <strong>On this page</strong>
+    <ul>
+      <li><a href="#physical-ai">Physical AI</a></li>
+      <li><a href="#world-models">World models</a></li>
+      <li><a href="#training">Training</a></li>
+      <li><a href="#applications">Applications</a></li>
+      <li><a href="#validation">Validation</a></li>
+      <li><a href="#outlook">Outlook</a></li>
+      <li><a href="#reading">Further reading</a></li>
+    </ul>
+  </nav>
+</main>
+<footer class="container foot"><a href="../">Back to the portfolio</a></footer>
+</body>
+</html>
